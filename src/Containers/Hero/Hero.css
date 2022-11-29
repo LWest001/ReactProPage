@@ -1,0 +1,35 @@
+.hero {
+  background-image: linear-gradient(
+      0deg,
+      #a2c9f6,
+      rgba(255, 255, 255, 0) 20% 80%,
+      #a2c9f6
+    ),
+    url(./assets/wideshot.png);
+  background-position: bottom right;
+  margin: auto;
+  height: 30em;
+  max-width: calc(30em * 2.09);
+}
+
+.logo {
+  height: 60px;
+  margin: 0px 32px 0 0;
+  position: relative;
+  top: 40px;
+  left: 20px;
+  will-change: filter;
+}
+
+.logo[src*="react"] {
+  filter: drop-shadow(0 0 1px black);
+}
+
+.technologies img:hover {
+  filter: drop-shadow(0 0 2em #1b26ffaa);
+}
+/* 
+.logo[src*="react"]:hover {
+  filter: drop-shadow(0 0 1px black);
+  filter: drop-shadow(0 0 2em #646cffaa);
+} */
