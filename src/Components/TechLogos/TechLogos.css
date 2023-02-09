@@ -1,0 +1,61 @@
+.TechLogos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.25rem .25rem 0 .25rem;
+  margin: 0 auto;
+  height: 25%;
+  justify-content: center;
+  align-items: center;
+}
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+}
+.TechLogos img {
+  height: 3.75rem;
+  position: relative;
+  will-change: filter;
+}
+
+.TechLogos img.React {
+  filter: drop-shadow(0 0 1px black);
+}
+
+.TechLogos img:hover {
+  filter: drop-shadow(0 0 2em #1b26ffaa);
+}
+
+.logoContainer p {
+  margin: 0;
+  color: black;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (hover: none) {
+  .logoContainer p {
+    display: none;
+  }
+}
+
+@media (max-width: 550px) {
+  .TechLogos img {
+    height: 3rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .TechLogos img {
+    height: 2.5rem;
+  }
+}
+@media only screen and (max-height: 600px) {
+  .TechLogos {
+    justify-content: flex-start;
+    padding-top:.2rem;
+  }
+}

@@ -1,19 +1,20 @@
-import { useState } from 'react'
-import './App.css'
-import {Hero} from "./Containers/Hero/Hero"
+import "./App.css";
+import Hero from "./Containers/Hero/Hero";
+import ProjectsList from "./Containers/ProjectsList/ProjectsList";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
-      <Hero/>
-      <h1>Leo Westebbe</h1>
-      <h2>Fullstack Web Developer</h2>
-      <p className="read-the-docs">
-      </p>
+      <div className="Splash">
+        <Hero />
+        <div className="nameplate">
+          <h1>Leo Westebbe</h1>
+          <h2>Front-End Web Developer</h2>
+        </div>
+      </div>
+      <ProjectsList />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
