@@ -7,15 +7,21 @@
     ),
     url(../../assets/wideshot.png);
   background-position: 80% 100%;
-  margin: auto;
+  margin: 0 auto;
   height: 480px;
   max-width: calc(30em * 2.09);
-  /* display: flex; */
   justify-content: end;
 }
 
 @media only screen and (max-height: 600px) {
   .hero {
     height: 66vh;
+  }
+}
+
+@media only screen and (max-height: 500px) {
+  .hero {
+background-position: 80% 80%;
+background-size:cover;
   }
 }

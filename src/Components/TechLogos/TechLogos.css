@@ -5,12 +5,13 @@
   padding: 1.25rem .25rem 0 .25rem;
   margin: 0 auto;
   height: 25%;
-  justify-content: center;
+  justify-content:flex-start;
   align-items: center;
 }
 .logoContainer {
   display: flex;
   flex-direction: column;
+  margin:auto;
 }
 .TechLogos img {
   height: 3.75rem;
@@ -53,9 +54,21 @@
     height: 2.5rem;
   }
 }
+@media (max-width: 320px) {
+  .TechLogos {
+    gap:.5rem
+  }
+}
 @media only screen and (max-height: 600px) {
   .TechLogos {
     justify-content: flex-start;
     padding-top:.2rem;
+    width:50%;
+    margin-left: 0;
+  }
+}
+@media only screen and (max-height: 475px) {
+  .TechLogos img {
+    height:3rem
   }
 }

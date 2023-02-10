@@ -7,6 +7,21 @@
 
 .Splash {
   height: 100vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nameplate {
+  margin:auto;
+}
+
+section h2 {
+  font-size: 2.5rem;
+}
+
+section h3 {
+  font-size: 2rem;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -21,8 +36,4 @@
     line-height: 1;
     margin: 0.5rem;
   }
-}
-
-.card {
-  padding: 2em;
 }

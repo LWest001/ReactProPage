@@ -1,0 +1,35 @@
+.Project {
+  border: var(--transparentWhite) 1px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.project-image {
+    width:100%;
+    max-width: fit-content;
+}
+.project-icon {
+  width: 2rem;
+  border-radius: 20%;
+  outline: var(--transparentWhite) 1px solid;
+}
+
+.project-links {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+@media (prefers-color-scheme: light) {
+}
