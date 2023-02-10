@@ -11,7 +11,7 @@ const projectsData = [
     description:
       "A light and minimal Reddit client that displays the default view of Reddit using data from the Reddit JSON API.",
     links: {
-      hosted: "https://effulgent-semolina-e038d2.netlify.app/",
+      hosted: "https://reddit-lw.netlify.app/",
       repo: "https://github.com/LWest001/reddit-client",
     },
   },
@@ -22,7 +22,7 @@ const projectsData = [
     description:
       "Local weather information delivered to you using the OpenWeather API.",
     links: {
-      hosted: "https://amazing-starlight-c69366.netlify.app/",
+      hosted: "https://weathernow-lw.netlify.app/",
       repo: "https://github.com/LWest001/ReactWeatherApp",
     },
   },
