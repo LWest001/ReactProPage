@@ -1,14 +1,14 @@
-import HTMLLogo from "../../assets/HTML.svg";
-import CSSLogo from "../../assets/CSS.svg";
-import JavaScriptLogo from "../../assets/JavaScript.svg";
-import ViteLogo from "../../assets/Vite.svg";
-import ReactjsLogo from "../../assets/React.svg";
-import JestLogo from "../../assets/Jest.svg";
-import ReduxLogo from "../../assets/Redux.svg";
-import GitLogo from "../../assets/Git.svg";
-import GitHubLogo from "../../assets/GitHub.svg";
-import MochaLogo from "../../assets/Mocha.svg";
-import npmLogo from "../../assets/npm.svg";
+import HTML from "../../assets/HTML.svg";
+import CSS from "../../assets/CSS.svg";
+import JavaScript from "../../assets/JavaScript.svg";
+import Vite from "../../assets/Vite.svg";
+import Reactjs from "../../assets/React.svg";
+import Jest from "../../assets/Jest.svg";
+import Redux from "../../assets/Redux.svg";
+import Git from "../../assets/Git.svg";
+import GitHub from "../../assets/GitHub.svg";
+import Mocha from "../../assets/Mocha.svg";
+import npm from "../../assets/npm.svg";
 import "./TechLogos.css";
 
 function TechLogos() {
@@ -23,28 +23,27 @@ function TechLogos() {
   };
 
   const technologiesArray = [
-    HTMLLogo,
-    CSSLogo,
-    JavaScriptLogo,
-    ReactjsLogo,
-    ReduxLogo,
-    ViteLogo,
-    JestLogo,
-    MochaLogo,
-    GitLogo,
-    GitHubLogo,
-    npmLogo,
+    { HTML },
+    { CSS },
+    { JavaScript },
+    { Reactjs },
+    { Redux },
+    { Vite },
+    { Jest },
+    { Mocha },
+    { Git },
+    { GitHub },
+    { npm },
   ];
-  const regex = /(?<=assets\/)\w*/;
 
   return (
     <div className="TechLogos">
       {technologiesArray.map((tech) => {
-        const techName = tech.match(regex)[0];
+        const techName = Object.keys(tech)[0];
         return (
           <div className={`logoContainer ${techName}`} key={techName}>
             <img
-              src={tech}
+              src={tech[techName]}
               onMouseOver={handleOnMouseOver}
               onMouseLeave={handleOnMouseLeave}
               className={`${techName}`}
