@@ -1,3 +1,4 @@
+import { Stack, Divider } from "@mui/material";
 import "./Project.css";
 
 function Project({ name, image, description, links, icon }) {
@@ -13,14 +14,14 @@ function Project({ name, image, description, links, icon }) {
         className="project-image"
       />
       <p className="project-description">{description}</p>
-      <div className="project-links">
-        <p className="hosted-link button">
-          <a href={links.hosted}>Visit on the web</a>
-        </p>
-        <p className="repo-link button">
-          <a href={links.repo}>GitHub repository</a>
-        </p>
-      </div>
+      <Stack
+        direction="row"
+        divider={<Divider orientation="vertical" flexItem />}
+        className="project-links"
+      >
+        <a href={links.hosted}>Visit on the web</a>
+        <a href={links.repo}>GitHub repository</a>
+      </Stack>
     </div>
   );
 }
