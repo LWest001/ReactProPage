@@ -2,6 +2,7 @@ import "./App.css";
 import Hero from "./Containers/Hero/Hero";
 import ProjectsList from "./Containers/ProjectsList/ProjectsList";
 import { Container, Typography, ThemeProvider } from "@mui/material";
+import FixedBottomNavigation from "./Components/FixedBottomNavigation";
 import theme from "./assets/theme";
 
 function App() {
@@ -12,10 +13,11 @@ function App() {
           <Hero />
           <div className="nameplate">
             <Typography variant="h1">Leo Westebbe</Typography>
-            <Typography variant="h2">Front-End Web Developer</Typography>
+            <Typography variant="h2">Web Developer</Typography>
           </div>
         </div>
         <ProjectsList />
+        <FixedBottomNavigation/>
       </Container>
     </ThemeProvider>
   );

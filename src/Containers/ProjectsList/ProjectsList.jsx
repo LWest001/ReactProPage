@@ -15,7 +15,7 @@ function ProjectsList() {
     );
   });
   return (
-    <section className="ProjectsList">
+    <section className="ProjectsList" id="ProjectsList">
       <h2>Projects</h2>
       {projects}
     </section>
