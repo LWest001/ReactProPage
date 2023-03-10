@@ -14,12 +14,12 @@ import "./TechLogos.css";
 function TechLogos() {
   const handleOnMouseOver = (e) => {
     const className = e.target.className;
-    // document.querySelector(`p.logo.${className}`).style.visibility = "visible";
+    document.querySelector(`p.logo.${className}`).style.visibility = "visible";
   };
 
   const handleOnMouseLeave = (e) => {
     const className = e.target.className;
-    // document.querySelector(`p.logo.${className}`).style.visibility = "hidden";
+    document.querySelector(`p.logo.${className}`).style.visibility = "hidden";
   };
 
   const technologiesArray = [
@@ -50,7 +50,9 @@ function TechLogos() {
               key={techName}
               alt={`${techName} logo`}
             />
-            
+            <p className={`logo ${techName}`} style={{ visibility: "hidden" }}>
+              {techName}
+            </p>
           </div>
         );
       })}
