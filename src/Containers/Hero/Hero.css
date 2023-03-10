@@ -10,6 +10,7 @@
   margin: 0 auto;
   height: 480px;
   max-width: calc(30em * 2.09);
+  width:100%;
   justify-content: end;
 }
 
