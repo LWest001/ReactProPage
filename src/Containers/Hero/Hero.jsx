@@ -1,12 +1,13 @@
 import "./Hero.css";
 import TechLogos from "../../Components/TechLogos/TechLogos";
+import { Box } from "@mui/material";
 
 function Hero () {
   
   return (
-    <div className="hero">
+    <Box className="hero">
       <TechLogos/>
-    </div>
+    </Box>
   );
 };
 

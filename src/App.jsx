@@ -1,25 +1,83 @@
 import "./App.css";
 import Hero from "./Containers/Hero/Hero";
 import ProjectsList from "./Containers/ProjectsList/ProjectsList";
-import { Container, Typography, ThemeProvider } from "@mui/material";
+import {
+  Container,
+  Typography,
+  Box,
+  useMediaQuery,
+  IconButton,
+  Menu,
+} from "@mui/material";
 import FixedBottomNavigation from "./Components/FixedBottomNavigation";
-import theme from "./assets/theme";
+import PermanentDrawerNav from "./Components/PermanentDrawerNav";
+import { useState, useEffect } from "react";
+import { ChevronRight } from "@mui/icons-material";
 
 function App() {
+  const [open, setOpen] = useState(true);
+  const isMediumScreen = useMediaQuery((theme) => theme.breakpoints.down("md"));
+
+  useEffect(() => {
+    console.log(isMediumScreen);
+    isMediumScreen && setOpen(false);
+    !isMediumScreen && setOpen(true);
+  }, [isMediumScreen]);
+
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+
   return (
-    <ThemeProvider theme={theme}>
-      <Container className="App">
-        <div className="Splash">
+    <Container
+      className="App"
+      sx={{ display: "flex", flexDirection: "column" }}
+    >
+      {isMediumScreen && (
+        <Box position="fixed" sx={{ left: "0", height: "100vh", width: 20 }}>
+          <IconButton
+            color="inherit"
+            size="small"
+            
+            aria-label="open drawer"
+            onClick={handleDrawerOpen}
+            // edge="start"
+            sx={{
+          mt:2,
+              ...(open && { display: "none" }),
+              ":hover": {
+                bgcolor: "black",
+                color: "white"
+              },
+            }}
+          >
+            <ChevronRight />
+          </IconButton>
+        </Box>
+      )}
+      <PermanentDrawerNav
+        open={open}
+        setOpen={setOpen}
+        isMediumScreen={isMediumScreen}
+      />
+      <Box
+        sx={{
+          flexGrow: 1,
+          ml: open ? "135px" : 0,
+          transition: "margin-left .2s",
+        }}
+      >
+        <Box className="Splash" sx={{ mt: 5 }}>
           <Hero />
-          <div className="nameplate">
+          <Box className="nameplate">
             <Typography variant="h1">Leo Westebbe</Typography>
             <Typography variant="h2">Web Developer</Typography>
-          </div>
-        </div>
+          </Box>
+        </Box>
         <ProjectsList />
-        <FixedBottomNavigation/>
-      </Container>
-    </ThemeProvider>
+      </Box>
+      {/* <FixedBottomNavigation /> */}
+    </Container>
   );
 }
 

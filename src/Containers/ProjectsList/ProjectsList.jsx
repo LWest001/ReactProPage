@@ -11,6 +11,7 @@ function ProjectsList() {
         description={project.description}
         links={project.links}
         icon={project?.icon}
+        key={project.name}
       />
     );
   });
