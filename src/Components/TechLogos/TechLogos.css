@@ -5,13 +5,9 @@
   gap: 1rem;
   padding: 1.25rem 0.25rem 0 0.25rem;
   margin: 0 auto;
-  /* height: 25%; */
-  /* justify-content: center; */
-  /* align-items: center; */
 }
 
 .logoContainer {
-  /* display: flex; */
   flex-direction: column;
   margin: auto;
   -webkit-animation-duration: 1s;
@@ -22,33 +18,39 @@
 .TechLogos img {
   width: 100%;
   max-width: 100%;
-  /* position: relative; */
   will-change: filter;
+  transition: 0.2s;
 }
 
-.TechLogos img.Reactjs {
-  filter: drop-shadow(0 0 1px #1b26ffaa);
+.TechLogos img {
+  filter: drop-shadow(0 0 3px white);
 }
 
-.TechLogos img:hover {
-  filter: drop-shadow(0 0 2em #1b26ffaa);
+.logoContainer img:hover {
+  filter: drop-shadow(0 2.3rem 0.5rem white) drop-shadow(0 0 0.5rem white);
 }
 
 .logoContainer p {
   margin: 0;
-  padding:0;
+  padding: 0;
   color: black;
   font-weight: bold;
-  /* display: flex; */
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-width: max-content;
-  position:absolute;
-  left: 0; 
-  right: 0; 
-  background-color: #ffffff49;
-line-height: 1.1rem;
+  position: absolute;
+  /* top: 0; */
+  left: 0;
+  right: 0;
+  line-height: 1.1rem;
+  height: 100%;
+  /* z-index: -1; */
+  transition: top .2s, bottom .2s;
+}
+
+.logoContainer p:hover {
+  top: initial;
 }
 
 @-webkit-keyframes bounce {

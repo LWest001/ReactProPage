@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+.App:last-child{
+  margin-bottom: 3.5rem;
+}
+
 .Splash {
   height: 100vh;
   display:flex;

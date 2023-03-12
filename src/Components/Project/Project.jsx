@@ -1,9 +1,9 @@
-import { Stack, Divider } from "@mui/material";
+import { Stack, Divider, Card, CardMedia, Link } from "@mui/material";
 import "./Project.css";
 
 function Project({ name, image, description, links, icon }) {
   return (
-    <div className={`Project`}>
+    <Card className={`Project`} sx={{ margin: "0.5rem 1rem" }}>
       <h3 className="project-header">
         <img src={icon} alt={`${name} icon`} className="project-icon" />
         {name}
@@ -15,14 +15,23 @@ function Project({ name, image, description, links, icon }) {
       />
       <p className="project-description">{description}</p>
       <Stack
+        sx={{
+          height: "2rem",
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems:"center",
+          gap: "1rem",
+          backgroundColor: "aliceblue",
+        }}
         direction="row"
         divider={<Divider orientation="vertical" flexItem />}
         className="project-links"
       >
-        <a href={links.hosted}>Visit on the web</a>
-        <a href={links.repo}>GitHub repository</a>
+        <Link href={links.hosted}>Visit on the web</Link>
+        <Link href={links.repo}>GitHub repository</Link>
       </Stack>
-    </div>
+    </Card>
   );
 }
 

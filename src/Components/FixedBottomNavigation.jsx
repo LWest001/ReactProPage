@@ -12,8 +12,8 @@ function FixedBottomNavigation() {
     >
       <BottomNavigation showLabels>
         <BottomNavigationAction label="Home" icon={<HomeIcon />} href='#'/>
-        <BottomNavigationAction label="Projects" icon={<AppsIcon />} href='#ProjectsList'/>
         <BottomNavigationAction label="About Me" icon={<PersonIcon />} />
+        <BottomNavigationAction label="Projects" icon={<AppsIcon />} href='#ProjectsList'/>
         <BottomNavigationAction label="Get in touch" icon={<EmailIcon />} />
       </BottomNavigation>
     </Paper>
