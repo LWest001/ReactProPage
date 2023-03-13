@@ -19,7 +19,6 @@ function App() {
   const isMediumScreen = useMediaQuery((theme) => theme.breakpoints.down("md"));
 
   useEffect(() => {
-    console.log(isMediumScreen);
     isMediumScreen && setOpen(false);
     !isMediumScreen && setOpen(true);
   }, [isMediumScreen]);
@@ -31,6 +30,7 @@ function App() {
   return (
     <Container
       className="App"
+      disableGutters
       sx={{ display: "flex", flexDirection: "column" }}
     >
       {isMediumScreen && (
@@ -38,16 +38,15 @@ function App() {
           <IconButton
             color="inherit"
             size="small"
-            
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             // edge="start"
             sx={{
-          mt:2,
+              mt: 2,
               ...(open && { display: "none" }),
               ":hover": {
                 bgcolor: "black",
-                color: "white"
+                color: "white",
               },
             }}
           >
@@ -63,11 +62,11 @@ function App() {
       <Box
         sx={{
           flexGrow: 1,
-          ml: open ? "135px" : 0,
+          ml: open ? 20 : 0,
           transition: "margin-left .2s",
         }}
       >
-        <Box className="Splash" sx={{ mt: 5 }}>
+        <Box className="Splash" sx={{ mt: 5, height: "100vh" }}>
           <Hero />
           <Box className="nameplate">
             <Typography variant="h1">Leo Westebbe</Typography>

@@ -1,6 +1,8 @@
 import "./ProjectsList.css";
 import Project from "../../Components/Project/Project";
 import projectsData from "./projectsData";
+import { Typography, Grid } from "@mui/material";
+import { Box } from "@mui/system";
 
 function ProjectsList() {
   const projects = projectsData.map((project) => {
@@ -16,10 +18,12 @@ function ProjectsList() {
     );
   });
   return (
-    <section className="ProjectsList" id="ProjectsList">
-      <h2>Projects</h2>
-      {projects}
-    </section>
+    <Box>
+      <Typography variant="h2">Projects</Typography>
+      <Grid container spacing={2} className="ProjectsList" id="ProjectsList">
+        {projects}
+      </Grid>
+    </Box>
   );
 }
 
