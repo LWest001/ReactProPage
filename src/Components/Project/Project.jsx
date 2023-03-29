@@ -4,14 +4,20 @@ import {
   Card,
   CardMedia,
   Link,
-  Typography,
   CardHeader,
   CardContent,
   Grid,
 } from "@mui/material";
+import { useEffect, useState } from "react";
+import MobileViewSwitch from "./MobileViewSwitch";
 import "./Project.css";
 
 function Project({ name, image, description, links, icon, video }) {
+  const [checked, setChecked] = useState(false);
+  function handleChange(e) {
+    setChecked(e.target.checked);
+  }
+
   return (
     <Grid>
       <Card className={`Project`} raised sx={{ m: "0.5rem 1rem", p: "0.5rem" }}>
@@ -24,17 +30,26 @@ function Project({ name, image, description, links, icon, video }) {
           {name}
         </CardHeader>
         <CardContent>
-          {video ? (
-            <CardMedia component="video" autoplay="true" muted="true" loop>
-              <source src={video} />
+          <MobileViewSwitch checked={checked} handleChange={handleChange} />
+
+          {checked && (
+            <CardMedia
+              component="video"
+              autoPlay={true}
+              muted={true}
+              loop
+              sx={{ maxHeight: "660px" }}
+            >
+              <source src={video.mobile} />
             </CardMedia>
-          ) : (
-            <img
-              src={image}
-              alt={`Screenshot of the project called ${name}`}
-              className="project-image"
-            />
           )}
+
+          {!checked && (
+            <CardMedia component="video" autoPlay={true} muted={true} loop>
+              <source src={video.desktop} />
+            </CardMedia>
+          )}
+
           <p className="project-description">{description}</p>
         </CardContent>
         <Stack

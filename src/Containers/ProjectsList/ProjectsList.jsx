@@ -4,7 +4,7 @@ import projectsData from "./projectsData";
 import { Typography, Grid } from "@mui/material";
 import { Box } from "@mui/system";
 
-function ProjectsList() {
+function ProjectsList({ open }) {
   const projects = projectsData.map((project) => {
     return (
       <Project
@@ -19,7 +19,13 @@ function ProjectsList() {
     );
   });
   return (
-    <Grid container spacing={2} className="ProjectsList" id="ProjectsList">
+    <Grid
+      container
+      spacing={2}
+      className="ProjectsList"
+      id="ProjectsList"
+      sx={{ maxWidth: "986px" }}
+    >
       {projects}
     </Grid>
   );

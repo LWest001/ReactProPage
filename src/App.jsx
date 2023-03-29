@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import FixedBottomNavigation from "./Components/FixedBottomNavigation";
 import PermanentDrawerNav from "./Components/PermanentDrawerNav";
-import { useState, useEffect } from "react";
+import { useState, useEffect, createContext } from "react";
 import { ChevronRight } from "@mui/icons-material";
 
 function App() {
@@ -63,6 +63,7 @@ function App() {
         sx={{
           flexGrow: 1,
           ml: open ? 20 : 0,
+          mr: 2,
           transition: "margin-left .2s",
         }}
       >
@@ -73,8 +74,12 @@ function App() {
             <Typography variant="h2">Web Developer</Typography>
           </Box>
         </Box>
-        <Typography variant="h2" mb={2}>Projects</Typography>
-        <ProjectsList />
+        <Typography variant="h2" mb={2}>
+          Projects
+        </Typography>
+
+          <ProjectsList open={open}/>
+
       </Box>
       {/* <FixedBottomNavigation /> */}
     </Container>
