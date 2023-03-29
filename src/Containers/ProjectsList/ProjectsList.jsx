@@ -14,16 +14,14 @@ function ProjectsList() {
         links={project.links}
         icon={project?.icon}
         key={project.name}
+        video={project.video || null}
       />
     );
   });
   return (
-    <Box>
-      <Typography variant="h2">Projects</Typography>
-      <Grid container spacing={2} className="ProjectsList" id="ProjectsList">
-        {projects}
-      </Grid>
-    </Box>
+    <Grid container spacing={2} className="ProjectsList" id="ProjectsList">
+      {projects}
+    </Grid>
   );
 }
 

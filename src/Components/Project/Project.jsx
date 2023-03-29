@@ -11,30 +11,30 @@ import {
 } from "@mui/material";
 import "./Project.css";
 
-function Project({ name, image, description, links, icon }) {
+function Project({ name, image, description, links, icon, video }) {
   return (
-    <Grid md>
-      <Card
-        className={`Project`}
-        elevation={3}
-        sx={{ m: "0.5rem 1rem", p: "0.5rem" }}
-      >
+    <Grid>
+      <Card className={`Project`} raised sx={{ m: "0.5rem 1rem", p: "0.5rem" }}>
         <CardHeader
           avatar={
             <img src={icon} alt={`${name} icon`} className="project-icon" />
           }
           title={name}
         >
-          {/* <Typography variant="h3" className="project-header"> */}
           {name}
-          {/* </Typography> */}
         </CardHeader>
         <CardContent>
-          <img
-            src={image}
-            alt={`Screenshot of the project called ${name}`}
-            className="project-image"
-          />
+          {video ? (
+            <CardMedia component="video" autoplay="true" muted="true" loop>
+              <source src={video} />
+            </CardMedia>
+          ) : (
+            <img
+              src={image}
+              alt={`Screenshot of the project called ${name}`}
+              className="project-image"
+            />
+          )}
           <p className="project-description">{description}</p>
         </CardContent>
         <Stack

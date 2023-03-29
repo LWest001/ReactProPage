@@ -73,6 +73,7 @@ function App() {
             <Typography variant="h2">Web Developer</Typography>
           </Box>
         </Box>
+        <Typography variant="h2" mb={2}>Projects</Typography>
         <ProjectsList />
       </Box>
       {/* <FixedBottomNavigation /> */}
