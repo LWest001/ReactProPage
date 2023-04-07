@@ -19,8 +19,8 @@ function Project({ name, image, description, links, icon, video }) {
   }
 
   return (
-    <Grid className="Project">
-      <Card raised sx={{ m: "0.5rem 1rem", p: "0.5rem", minWidth:"100%" }}>
+    <Grid className="Project" sx={{ minWidth: "100%" }}>
+      <Card raised sx={{ m: "0.5rem 1rem", p: "0.5rem", minWidth: "100%" }}>
         <CardHeader
           avatar={
             <img src={icon} alt={`${name} icon`} className="project-icon" />
