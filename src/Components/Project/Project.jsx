@@ -38,6 +38,7 @@ function Project({ name, image, description, links, icon, video }) {
               autoPlay={false}
               muted={true}
               loop
+              playsInline
               controls
               sx={{ maxHeight: "660px" }}
             >
@@ -51,6 +52,7 @@ function Project({ name, image, description, links, icon, video }) {
               autoPlay={false}
               muted={true}
               loop
+              playsInline
               controls
             >
               <source src={video.desktop} />
