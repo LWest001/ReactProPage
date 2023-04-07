@@ -5,6 +5,7 @@ import weatherIcon from "../../assets/projectScreenshots/weather-icon.svg";
 import redditVideo from "../../assets/projectScreenshots/reddit.webm";
 import weatherVideo from "../../assets/projectScreenshots/weathernow.webm";
 import redditMobileVideo from "../../assets/projectScreenshots/redditMobile.webm";
+import weatherMobileVideo from "../../assets/projectScreenshots/weathernowMobile.webm";
 
 const projectsData = [
   {
@@ -23,7 +24,7 @@ const projectsData = [
     name: "WeatherNow",
     image: weatherScreenshot,
     icon: weatherIcon,
-    video: { desktop: weatherVideo },
+    video: { desktop: weatherVideo, mobile: weatherMobileVideo },
     description:
       "Local weather information delivered to you using the OpenWeather API.",
     links: {
