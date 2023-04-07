@@ -35,9 +35,10 @@ function Project({ name, image, description, links, icon, video }) {
           {checked && (
             <CardMedia
               component="video"
-              autoPlay={true}
+              autoPlay={false}
               muted={true}
               loop
+              controls
               sx={{ maxHeight: "660px" }}
             >
               <source src={video.mobile} />
@@ -45,7 +46,13 @@ function Project({ name, image, description, links, icon, video }) {
           )}
 
           {!checked && (
-            <CardMedia component="video" autoPlay={true} muted={true} loop>
+            <CardMedia
+              component="video"
+              autoPlay={false}
+              muted={true}
+              loop
+              controls
+            >
               <source src={video.desktop} />
             </CardMedia>
           )}
