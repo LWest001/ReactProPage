@@ -2,10 +2,10 @@ import redditScreenshot from "../../assets/projectScreenshots/reddit-client.png"
 import redditClientIcon from "../../assets/projectScreenshots/reddit-icon.svg";
 import weatherScreenshot from "../../assets/projectScreenshots/weather-app.png";
 import weatherIcon from "../../assets/projectScreenshots/weather-icon.svg";
-import redditVideo from "../../assets/projectScreenshots/reddit.webm";
-import weatherVideo from "../../assets/projectScreenshots/weathernow.webm";
-import redditMobileVideo from "../../assets/projectScreenshots/redditMobile.webm";
-import weatherMobileVideo from "../../assets/projectScreenshots/weathernowMobile.webm";
+import redditVideo from "../../assets/projectScreenshots/reddit.mp4";
+import weatherVideo from "../../assets/projectScreenshots/weathernow.mp4";
+import redditMobileVideo from "../../assets/projectScreenshots/redditMobile.mp4";
+import weatherMobileVideo from "../../assets/projectScreenshots/weathernowMobile.mp4";
 
 const projectsData = [
   {
