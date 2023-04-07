@@ -35,7 +35,7 @@ function Project({ name, image, description, links, icon, video }) {
           {checked && (
             <CardMedia
               component="video"
-              autoPlay={false}
+              autoPlay
               muted={true}
               loop
               playsInline
@@ -49,7 +49,7 @@ function Project({ name, image, description, links, icon, video }) {
           {!checked && (
             <CardMedia
               component="video"
-              autoPlay={false}
+              autoPlay
               muted={true}
               loop
               playsInline
