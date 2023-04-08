@@ -13,6 +13,7 @@ import FixedBottomNavigation from "./Components/FixedBottomNavigation";
 import PermanentDrawerNav from "./Components/PermanentDrawerNav";
 import { useState, useEffect, createContext } from "react";
 import { ChevronRight } from "@mui/icons-material";
+import AboutMe from "./Containers/AboutMe/AboutMe";
 
 function App() {
   const [open, setOpen] = useState(true);
@@ -31,7 +32,7 @@ function App() {
     <Container
       className="App"
       disableGutters
-      sx={{ display: "flex", flexDirection: "column" }}
+      sx={{ display: "flex", flexDirection: "column", maxWidth: "1000px" }}
     >
       {isMediumScreen && (
         <Box position="fixed" sx={{ left: "0", height: "100vh", width: 20 }}>
@@ -63,7 +64,7 @@ function App() {
         sx={{
           flexGrow: 1,
           ml: open ? 20 : 0,
-          mr: 2,
+
           transition: "margin-left .2s",
         }}
       >
@@ -74,12 +75,15 @@ function App() {
             <Typography variant="h2">Web Developer</Typography>
           </Box>
         </Box>
-        <Typography variant="h2" mb={2}>
+        <Typography className="sectionHeader" id="about-me" variant="h2" mb={2}>
+          About Me
+        </Typography>
+        <AboutMe />
+
+        <Typography className="sectionHeader" id="projects" variant="h2" mb={2}>
           Projects
         </Typography>
-
-          <ProjectsList open={open}/>
-
+        <ProjectsList />
       </Box>
       {/* <FixedBottomNavigation /> */}
     </Container>

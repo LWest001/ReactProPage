@@ -8,6 +8,7 @@ const theme = createTheme({
     },
     h2: {
       fontSize: "2rem",
+      margin: "1rem 0"
     },
     h3: {
       fontSize: "1.5rem",

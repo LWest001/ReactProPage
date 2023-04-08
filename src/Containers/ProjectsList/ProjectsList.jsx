@@ -1,10 +1,9 @@
-import "./ProjectsList.css";
 import Project from "../../Components/Project/Project";
 import projectsData from "./projectsData";
-import { Typography, Grid } from "@mui/material";
+import { Typography, Grid, Stack } from "@mui/material";
 import { Box } from "@mui/system";
 
-function ProjectsList({ open }) {
+function ProjectsList() {
   const projects = projectsData.map((project) => {
     return (
       <Project
@@ -19,15 +18,15 @@ function ProjectsList({ open }) {
     );
   });
   return (
-    <Grid
+    <Stack
       container
-      spacing={2}
       className="ProjectsList"
       id="ProjectsList"
-      sx={{ maxWidth: "986px" }}
+      gap={2}
+      flexDirection="column"
     >
       {projects}
-    </Grid>
+    </Stack>
   );
 }
 

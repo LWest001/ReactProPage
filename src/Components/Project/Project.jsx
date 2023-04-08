@@ -20,7 +20,7 @@ function Project({ name, image, description, links, icon, video }) {
 
   return (
     <Grid className="Project" sx={{ minWidth: "100%" }}>
-      <Card raised sx={{ m: "0.5rem 1rem", p: "0.5rem", minWidth: "100%" }}>
+      <Card raised sx={{ minWidth: "100%" }}>
         <CardHeader
           avatar={
             <img src={icon} alt={`${name} icon`} className="project-icon" />
@@ -39,7 +39,6 @@ function Project({ name, image, description, links, icon, video }) {
               muted={true}
               loop
               playsInline
-              controls
               sx={{ maxHeight: "660px" }}
             >
               <source src={video.mobile} />
@@ -47,14 +46,7 @@ function Project({ name, image, description, links, icon, video }) {
           )}
 
           {!checked && (
-            <CardMedia
-              component="video"
-              autoPlay
-              muted={true}
-              loop
-              playsInline
-              controls
-            >
+            <CardMedia component="video" autoPlay muted={true} loop playsInline>
               <source src={video.desktop} />
             </CardMedia>
           )}

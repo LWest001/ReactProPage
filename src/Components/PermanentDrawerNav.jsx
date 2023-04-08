@@ -33,7 +33,7 @@ function PermanentDrawerNav({ open, setOpen, isMediumScreen }) {
   const menuItems = [
     { name: "Home", icon: <Home />, section: "#" },
     { name: "About Me", icon: <Person />, section: "#about-me" },
-    { name: "Projects", icon: <Apps />, section: "#ProjectsList" },
+    { name: "Projects", icon: <Apps />, section: "#projects" },
     { name: "Contact", icon: <Email />, section: "#contact" },
   ];
 
