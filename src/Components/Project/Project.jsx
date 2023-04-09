@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 import MobileViewSwitch from "./MobileViewSwitch";
 import "./Project.css";
 
-function Project({ name, image, description, links, icon, video }) {
+function Project({ name, fallback, description, links, icon, video }) {
   const [checked, setChecked] = useState(false);
   function handleChange(e) {
     setChecked(e.target.checked);
@@ -41,12 +41,14 @@ function Project({ name, image, description, links, icon, video }) {
             sx={{ maxHeight: "660px" }}
           >
             <source src={video.mobile} />
+            <img src={fallback?.mobile} alt={`Screenshot of ${name}`} />
           </CardMedia>
         )}
 
         {!checked && (
           <CardMedia component="video" autoPlay muted={true} loop playsInline>
             <source src={video.desktop} />
+            <img src={fallback?.desktop} alt={`Screenshot of ${name}`} />
           </CardMedia>
         )}
 
