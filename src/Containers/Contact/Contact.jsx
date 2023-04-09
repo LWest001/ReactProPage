@@ -45,7 +45,11 @@ export default function Contact() {
     <Card raised>
       <CardContent>
         <Stack direction="column" gap={2}>
-          <Stack direction="row" justifyContent="space-between">
+          <Stack
+            direction={["column", "column", "row"]}
+            justifyContent="space-between"
+            alignItems={["start", "start", "center"]}
+          >
             <Button
               display="flex"
               sx={{ alignItems: "center", justifyContent: "center", gap: 1 }}
