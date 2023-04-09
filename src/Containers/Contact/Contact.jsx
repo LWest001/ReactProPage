@@ -52,18 +52,27 @@ export default function Contact() {
           >
             <Button
               display="flex"
+              component="a"
+              target="_blank"
+              href="mailto:leo.westebbe@gmail.com"
               sx={{ alignItems: "center", justifyContent: "center", gap: 1 }}
             >
               <AlternateEmail /> leo.westebbe@gmail.com
             </Button>
             <Button
               display="flex"
+              component="a"
+              target="_blank"
+              href="https://github.com/LWest001"
               sx={{ alignItems: "center", justifyContent: "center", gap: 1 }}
             >
               <GitHub /> GitHub: LWest001
             </Button>
             <Button
               display="flex"
+              component="a"
+              target="_blank"
+              href="https://linkedin.com/in/leo-westebbe"
               sx={{ alignItems: "center", justifyContent: "center", gap: 1 }}
             >
               <LinkedIn /> LinkedIn: Leo-Westebbe
