@@ -6,6 +6,8 @@ import redditVideo from "../../assets/projectScreenshots/reddit.mp4";
 import weatherVideo from "../../assets/projectScreenshots/weathernow.mp4";
 import redditMobileVideo from "../../assets/projectScreenshots/redditMobile.mp4";
 import weatherMobileVideo from "../../assets/projectScreenshots/weathernowMobile.mp4";
+import weatherFallback from "../../assets/projectScreenshots/weather-now.png";
+import weatherMobileFallback from "../../assets/projectScreenshots/weather-now-mobile.png";
 
 const projectsData = [
   {
@@ -25,6 +27,7 @@ const projectsData = [
     image: weatherScreenshot,
     icon: weatherIcon,
     video: { desktop: weatherVideo, mobile: weatherMobileVideo },
+    fallback: { desktop: weatherFallback, mobile: weatherMobileFallback },
     description:
       "Local weather information delivered to you using the OpenWeather API.",
     links: {
