@@ -28,6 +28,13 @@ const theme = createTheme({
         },
       },
     },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          margin:20
+        }
+      }
+    }
   },
 });
 

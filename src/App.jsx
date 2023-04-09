@@ -14,6 +14,7 @@ import PermanentDrawerNav from "./Components/PermanentDrawerNav";
 import { useState, useEffect, createContext } from "react";
 import { ChevronRight } from "@mui/icons-material";
 import AboutMe from "./Containers/AboutMe/AboutMe";
+import Contact from "./Containers/Contact/Contact";
 
 function App() {
   const [open, setOpen] = useState(true);
@@ -84,6 +85,11 @@ function App() {
           Projects
         </Typography>
         <ProjectsList />
+
+        <Typography className="sectionHeader" id="contact" variant="h2" mb={2}>
+          Contact
+        </Typography>
+        <Contact />
       </Box>
       {/* <FixedBottomNavigation /> */}
     </Container>

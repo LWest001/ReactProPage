@@ -19,11 +19,10 @@ function ProjectsList() {
   });
   return (
     <Stack
-      container
       className="ProjectsList"
       id="ProjectsList"
       gap={2}
-      flexDirection="column"
+      direction="column"
     >
       {projects}
     </Stack>

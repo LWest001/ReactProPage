@@ -11,7 +11,7 @@ import resume from "../../assets/Leo_Westebbe_Resume.pdf";
 
 export default function AboutMe() {
   return (
-    <Stack flexDirection="column" gap={2}>
+    <Stack direction="column" gap={2}>
       <Card raised>
         <CardHeader title="Profile" />
         <CardContent sx={{ textAlign: "left" }}>
@@ -24,7 +24,7 @@ export default function AboutMe() {
             and training professional.
           </Typography>
           <Typography mt={2}>
-            <Link href={resume}>Professional Resume</Link>
+            <Link variant="button" href={resume}>Professional Resume</Link>
           </Typography>
         </CardContent>
       </Card>
