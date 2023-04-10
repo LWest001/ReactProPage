@@ -21,20 +21,17 @@ export default function Contact() {
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm();
 
-  const sendEmail = async ({
-    firstName,
-    lastName,
-    subject,
-    email,
-    message,
-  }) => {
-    const url = `/.netlify/netlify/functions/sendEmail/sendEmail?firstName=${firstName}&lastName=${lastName}&subject=${subject}&email=${email}&message=${message}`;
-    try {
-      const response = await fetch(url);
-      console.log(response);
-    } catch (err) {
-      console.log(err);
-    }
+  const sendEmail = (data) => {
+    emailjs
+      .send("service_rumsnfj", "template_kk9crxp", data, "twU11xl6ItuNlbP3k")
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
   // Testing function
@@ -92,23 +89,6 @@ export default function Contact() {
             {!isSubmitting && !isSubmitSuccessful && (
               <>
                 <FormItem
-                  name="email"
-                  prettyName="Email Address"
-                  required="Please provide an email address"
-                  register={register}
-                  type="email"
-                  error={errors.email?.message}
-                  inputProps={{ fullWidth: true }}
-                />
-                <FormItem
-                  name="subject"
-                  prettyName="Subject"
-                  required="Please provide a subject"
-                  register={register}
-                  error={errors.subject?.message}
-                  inputProps={{ fullWidth: true }}
-                />
-                <FormItem
                   name="firstName"
                   prettyName="First Name"
                   required="Please provide a first name."
@@ -122,6 +102,23 @@ export default function Contact() {
                   required="Please provide a last name."
                   error={errors.firstName?.message}
                   register={register}
+                  inputProps={{ fullWidth: true }}
+                />
+                <FormItem
+                  name="email"
+                  prettyName="Your Email Address"
+                  required="Please provide an email address"
+                  register={register}
+                  type="email"
+                  error={errors.email?.message}
+                  inputProps={{ fullWidth: true }}
+                />
+                <FormItem
+                  name="subject"
+                  prettyName="Subject"
+                  required="Please provide a subject"
+                  register={register}
+                  error={errors.subject?.message}
                   inputProps={{ fullWidth: true }}
                 />
                 <FormItem

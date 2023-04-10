@@ -1,17 +1,24 @@
 // Docs on event and context https://docs.netlify.com/functions/build/#code-your-function-2
+const emailjs = require("@emailjs/browser");
 const handler = async (event) => {
-  try {
-    const subject = event.queryStringParameters.name || 'World'
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ message: `Hello ${subject}` }),
-      // // more keys you can return:
-      // headers: { "headerName": "headerValue", ... },
-      // isBase64Encoded: true,
+  const { PUBLIC_KEY_EMAILJS, SERVICE_ID, TEMPLATE_ID } = require(process.env);
+  const {
+    firstName,
+    lastName,
+    email,
+    subject,
+    message,
+  } = event.queryStringParameters;
+  const data = { firstName, lastName, email, subject, message };
+  emailjs.send(SERVICE_ID, TEMPLATE_ID, data, PUBLIC_KEY_EMAILJS).then(
+    (result) => {
+      return result.text;
+    },
+    (error) => {
+      
+      return error.text;
     }
-  } catch (error) {
-    return { statusCode: 500, body: error.toString() }
-  }
-}
+  );
+};
 
-module.exports = { handler }
+module.exports = { handler };

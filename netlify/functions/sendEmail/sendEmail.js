@@ -12,9 +12,11 @@ const handler = async (event) => {
   const data = { firstName, lastName, email, subject, message };
   emailjs.send(SERVICE_ID, TEMPLATE_ID, data, PUBLIC_KEY_EMAILJS).then(
     (result) => {
+      console.log(result.text);
       return result.text;
     },
     (error) => {
+      console.log(error.text);
       return error.text;
     }
   );
