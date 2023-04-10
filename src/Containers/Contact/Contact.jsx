@@ -21,17 +21,20 @@ export default function Contact() {
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm();
 
-  const sendEmail = (data) => {
-    emailjs
-      .send("service_rumsnfj", "template_kk9crxp", data, "twU11xl6ItuNlbP3k")
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+  const sendEmail = async ({
+    firstName,
+    lastName,
+    subject,
+    email,
+    message,
+  }) => {
+    const url = `/.netlify/netlify/functions/sendEmail/sendEmail?firstName=${firstName}&lastName=${lastName}&subject=${subject}&email=${email}&message=${message}`;
+    try {
+      const response = await fetch(url);
+      console.log(response);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   // Testing function
