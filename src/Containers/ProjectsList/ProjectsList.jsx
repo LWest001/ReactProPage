@@ -8,7 +8,7 @@ function ProjectsList() {
     return (
       <Project
         name={project.name}
-        fallback={project.fallback}
+        image={project.image}
         description={project.description}
         links={project.links}
         icon={project?.icon}
