@@ -1,45 +1,44 @@
-import EmailIcon from "@mui/icons-material/Email";
 import {
   Box,
   Button,
   Card,
   CardContent,
-  FormHelperText,
-  IconButton,
   Stack,
   Typography,
 } from "@mui/material";
 import { useForm } from "react-hook-form";
-import FormItem from "./FormItem";
-import emailjs from "@emailjs/browser";
 import { AlternateEmail, GitHub, LinkedIn } from "@mui/icons-material";
+import FormItemHook from "./FormItemHook";
+import { useEffect } from "react";
 
 export default function Contact() {
   const {
-    register,
     handleSubmit,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
-  } = useForm();
+    control,
+    formState: { isSubmitting, isSubmitSuccessful, errors },
+  } = useForm({
+    mode: "all",
+  });
 
-  const sendEmail = (data) => {
-    emailjs
-      .send("service_rumsnfj", "template_kk9crxp", data, "twU11xl6ItuNlbP3k")
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-  };
+  useEffect(() => console.log(Object.entries(errors)), [errors]);
+
+  // const sendEmail = (data) => {
+  //   emailjs
+  //     .send("service_rumsnfj", "template_kk9crxp", data, "twU11xl6ItuNlbP3k")
+  //     .then(
+  //       (result) => {
+  //         console.log(result.text);
+  //       },
+  //       (error) => {
+  //         console.log(error.text);
+  //       }
+  //     );
+  // };
 
   // Testing function
-  //   const sendEmail = (data) => {
-  //     setTimeout(() => {
-  //       console.log(data);
-  //     }, 3000);
-  //   };
+  const sendEmail = (data) => {
+    console.log(data);
+  };
 
   return (
     <Card raised>
@@ -80,7 +79,7 @@ export default function Contact() {
           </Stack>
           <Box
             component="form"
-            onSubmit={handleSubmit((data) => sendEmail(data))}
+            onSubmit={handleSubmit(sendEmail)}
             display="grid"
             gridTemplateColumns="1fr 1fr"
             flexDirection="column"
@@ -88,53 +87,37 @@ export default function Contact() {
           >
             {!isSubmitting && !isSubmitSuccessful && (
               <>
-                <FormItem
-                  name="firstName"
+                <FormItemHook
+                  control={control}
+                  name={"firstName"}
                   prettyName="First Name"
-                  required="Please provide a first name."
-                  error={errors.firstName?.message}
-                  register={register}
-                  inputProps={{ fullWidth: true }}
                 />
-                <FormItem
-                  name="lastName"
+                <FormItemHook
+                  control={control}
+                  name={"lastName"}
                   prettyName="Last Name"
-                  required="Please provide a last name."
-                  error={errors.firstName?.message}
-                  register={register}
-                  inputProps={{ fullWidth: true }}
                 />
-                <FormItem
-                  name="email"
-                  prettyName="Your Email Address"
-                  required="Please provide an email address"
-                  register={register}
+                <FormItemHook
+                  control={control}
+                  name={"email"}
                   type="email"
-                  error={errors.email?.message}
-                  inputProps={{ fullWidth: true }}
+                  prettyName="Your Email Address"
                 />
-                <FormItem
-                  name="subject"
+                <FormItemHook
+                  control={control}
+                  name={"subject"}
                   prettyName="Subject"
-                  required="Please provide a subject"
-                  register={register}
-                  error={errors.subject?.message}
-                  inputProps={{ fullWidth: true }}
                 />
-                <FormItem
-                  name="message"
+                <FormItemHook
+                  control={control}
+                  name={"message"}
                   prettyName="Message"
-                  required="Please provide a message."
-                  error={errors.message?.message}
-                  register={register}
-                  sx={{ gridColumn: "1/3" }}
-                  inputProps={{
-                    multiline: true,
+                  textFieldProps={{
                     rows: 4,
-                    fullWidth: true,
+                    multiline: true,
                   }}
+                  sx={{ gridColumn: "1/3" }}
                 />
-
                 <Button
                   type="submit"
                   variant="contained"
