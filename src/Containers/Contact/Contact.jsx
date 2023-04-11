@@ -9,7 +9,7 @@ import {
 import { useForm } from "react-hook-form";
 import { AlternateEmail, GitHub, LinkedIn } from "@mui/icons-material";
 import FormItemHook from "./FormItemHook";
-import { useEffect } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const {
@@ -20,25 +20,23 @@ export default function Contact() {
     mode: "all",
   });
 
-  useEffect(() => console.log(Object.entries(errors)), [errors]);
-
-  // const sendEmail = (data) => {
-  //   emailjs
-  //     .send("service_rumsnfj", "template_kk9crxp", data, "twU11xl6ItuNlbP3k")
-  //     .then(
-  //       (result) => {
-  //         console.log(result.text);
-  //       },
-  //       (error) => {
-  //         console.log(error.text);
-  //       }
-  //     );
-  // };
+  const sendEmail = (data) => {
+    emailjs
+      .send("service_rumsnfj", "template_kk9crxp", data, "twU11xl6ItuNlbP3k")
+      .then(
+        (result) => {
+          return result.text;
+        },
+        (error) => {
+          return error.text;
+        }
+      );
+  };
 
   // Testing function
-  const sendEmail = (data) => {
-    console.log(data);
-  };
+  // const sendEmail = (data) => {
+  //   console.log(data);
+  // };
 
   return (
     <Card raised>

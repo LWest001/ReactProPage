@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material/styles";
 
-const theme = createTheme({
+let theme = createTheme({
   typography: {
     h1: {
       fontSize: "3.2rem",
@@ -8,7 +8,7 @@ const theme = createTheme({
     },
     h2: {
       fontSize: "2rem",
-      margin: "1rem 0"
+      margin: "1rem 0",
     },
     h3: {
       fontSize: "1.5rem",
@@ -19,7 +19,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           display: "flex",
-          alignItems:"center",
+          alignItems: "center",
           backgroundColor: "aliceblue",
         },
         title: {
@@ -31,10 +31,24 @@ const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          margin:20
-        }
-      }
-    }
+          margin: 20,
+        },
+      },
+    },
+  },
+});
+
+theme = createTheme(theme, {
+  components: {
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          [theme.breakpoints.only("xs")]: {
+            gridColumn: "1/3",
+          },
+        },
+      },
+    },
   },
 });
 
