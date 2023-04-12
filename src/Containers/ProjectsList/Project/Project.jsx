@@ -13,7 +13,9 @@ import MobileViewSwitch from "./MobileViewSwitch";
 import "./Project.css";
 
 function Project({ name, fallback, description, links, icon, video }) {
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(
+    window.innerWidth < 600 ? true : false
+  );
   function handleChange(e) {
     setChecked(e.target.checked);
   }
