@@ -15,7 +15,7 @@ import weatherMobileFallback from "../../assets/projectScreenshots/weather-app-m
 // Research Project
 import researchIcon from "/src/assets/projectScreenshots/research-icon.svg";
 import researchVideo from "../../assets/projectScreenshots/researchVideo.mp4";
-import researchMobile from "../../assets/projectScreenshots/researchVideo.mp4";
+import researchMobile from "../../assets/projectScreenshots/researchMobile.mp4";
 
 import researchFallback from "../../assets/projectScreenshots/weather-app.png";
 import researchMobileFallback from "../../assets/projectScreenshots/weather-app-mobile.png";
