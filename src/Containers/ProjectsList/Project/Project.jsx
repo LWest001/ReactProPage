@@ -73,9 +73,10 @@ function Project({ name, fallback, description, links, icon, video }) {
         {paragraphs}
       </CardContent>
       <Stack
+      p={2}
         sx={{
           width: "100%",
-          height: "4rem",
+          height: "fit-content",
           display: "flex",
           justifyContent: "space-evenly",
           alignItems: "center",
@@ -87,7 +88,7 @@ function Project({ name, fallback, description, links, icon, video }) {
         className="project-links"
       >
         {links.hosted && (
-          <Button component={Link} variant="contained" href={links.hosted}>
+          <Button component={Link} variant="contained" href={links.hosted} >
             On the web
           </Button>
         )}
