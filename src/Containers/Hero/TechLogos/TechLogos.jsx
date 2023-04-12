@@ -13,7 +13,8 @@ function TechLogos() {
     document.querySelector(`p.logo.${className}`).style.visibility = "hidden";
   };
 
-  const technologiesArray = useContext(LogosContext).slice(0, 6);
+  let technologiesArray = useContext(LogosContext);
+  technologiesArray = technologiesArray.slice(0, 6);
 
   return (
     <div className="TechLogos">
@@ -25,7 +26,7 @@ function TechLogos() {
               onMouseOver={handleOnMouseOver}
               onMouseLeave={handleOnMouseLeave}
               className={`${tech.name}`}
-              key={tech.name}
+              key={`hero-${tech.name}`}
               alt={`${tech.name} logo`}
             />
             <p className={`logo ${tech.name}`} style={{ visibility: "hidden" }}>

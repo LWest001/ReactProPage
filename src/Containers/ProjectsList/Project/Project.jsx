@@ -6,9 +6,9 @@ import {
   Link,
   CardHeader,
   CardContent,
-  Grid,
+  Typography,
 } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import MobileViewSwitch from "./MobileViewSwitch";
 import "./Project.css";
 
@@ -19,6 +19,13 @@ function Project({ name, fallback, description, links, icon, video }) {
   function handleChange(e) {
     setChecked(e.target.checked);
   }
+  let paragraphs = description.map((paragraph, i) => {
+    return (
+      <Typography textAlign="left" my={1} key={`${name}${i}`}>
+        {paragraph}
+      </Typography>
+    );
+  });
 
   return (
     <Card raised>
@@ -31,7 +38,9 @@ function Project({ name, fallback, description, links, icon, video }) {
         {name}
       </CardHeader>
       <CardContent>
-        <MobileViewSwitch checked={checked} handleChange={handleChange} />
+        {video.mobile && (
+          <MobileViewSwitch checked={checked} handleChange={handleChange} />
+        )}
 
         {checked && (
           <CardMedia
@@ -48,13 +57,20 @@ function Project({ name, fallback, description, links, icon, video }) {
         )}
 
         {!checked && (
-          <CardMedia component="video" autoPlay muted={true} loop playsInline>
+          <CardMedia
+            component="video"
+            autoPlay
+            muted={true}
+            loop
+            playsInline
+            sx={{ maxWidth: "776px", margin: "auto" }}
+          >
             <source src={video.desktop} />
             <img src={fallback?.desktop} alt={`Screenshot of ${name}`} />
           </CardMedia>
         )}
 
-        <p className="project-description">{description}</p>
+        {paragraphs}
       </CardContent>
       <Stack
         sx={{
@@ -70,8 +86,12 @@ function Project({ name, fallback, description, links, icon, video }) {
         divider={<Divider orientation="vertical" flexItem />}
         className="project-links"
       >
-        <Link href={links.hosted}>Visit on the web</Link>
-        <Link href={links.repo}>GitHub repository</Link>
+        {links.hosted && <Link href={links.hosted}>Visit on the web</Link>}
+        {links.demo && <Link href={links.demo}>Demo version</Link>}
+        {links.repo && <Link href={links.repo}>GitHub repository</Link>}
+        {links.presentation && (
+          <Link href={links.presentation}>Conference presentation</Link>
+        )}
       </Stack>
     </Card>
   );

@@ -12,6 +12,13 @@ import weatherMobileVideo from "../../assets/projectScreenshots/weathernowMobile
 import weatherFallback from "../../assets/projectScreenshots/weather-app.png";
 import weatherMobileFallback from "../../assets/projectScreenshots/weather-app-mobile.png";
 
+// Research Project
+import researchIcon from "/src/assets/projectScreenshots/research-icon.svg";
+import researchVideo from "../../assets/projectScreenshots/weathernow.mp4";
+
+import researchFallback from "../../assets/projectScreenshots/weather-app.png";
+import researchMobileFallback from "../../assets/projectScreenshots/weather-app-mobile.png";
+
 class Project {
   constructor(name, icon, video, fallback, description, links) {
     this.name = name;
@@ -24,30 +31,51 @@ class Project {
 }
 
 const projectsData = [
-  {
-    name: "rLite Reddit Client",
-    icon: redditClientIcon,
-    video: { desktop: redditVideo, mobile: redditMobileVideo },
-    fallback: { desktop: redditFallback, mobile: redditMobileFallback },
-    description:
+  new Project(
+    "rLite Reddit Client",
+    redditClientIcon,
+    { desktop: redditVideo, mobile: redditMobileVideo },
+    { desktop: redditFallback, mobile: redditMobileFallback },
+    [
       "A minimal Reddit client that displays Reddit homepage, subreddits, threaded comments, and search results using data from the Reddit JSON API.",
-    links: {
+    ],
+    {
       hosted: "https://reddit-lw.netlify.app/",
       repo: "https://github.com/LWest001/reddit-client",
-    },
-  },
-  {
-    name: "WeatherNow",
-    icon: weatherIcon,
-    video: { desktop: weatherVideo, mobile: weatherMobileVideo },
-    fallback: { desktop: weatherFallback, mobile: weatherMobileFallback },
-    description:
-      "Local weather information delivered to you using the OpenWeather API.",
-    links: {
+    }
+  ),
+  new Project(
+    "WeatherNow",
+    weatherIcon,
+    { desktop: weatherVideo, mobile: weatherMobileVideo },
+    { desktop: weatherFallback, mobile: weatherMobileFallback },
+    ["Local weather information delivered to you using the OpenWeather API."],
+    {
       hosted: "https://weathernow-lw.netlify.app/",
       repo: "https://github.com/LWest001/ReactWeatherApp",
+    }
+  ),
+  new Project(
+    "Undergraduate Research Project",
+    researchIcon,
+    {
+      desktop: researchVideo,
     },
-  },
+    { desktop: researchFallback },
+    [
+      "Experimental cognitive neuroscience research conducted for Senior Honors Thesis, UMass Boston. \
+      The experiment was deployed online to participants around the globe.",
+      "We adapted \"Scene wheels: Measuring perception and memory of real-world scenes with a continuous stimulus space\" by Son, Walther & Mack , using the jsPsych library for JavaScript.",
+      "This was my first foray into programming - some of the code in the repository does not follow best practices. \
+      This project also makes use of JavaScript ES5 rather than ES6.",
+      "Explore the demo version below, or watch the conference presentation to get a better understanding of our methods and findings.",
+    ],
+    {
+      demo: "https://routewheels.netlify.app/",
+      repo: "https://github.com/YibiaoLiang/onRoute/tree/3-part-pilot",
+      presentation: "https://www.youtube.com/watch?v=J9gYwK8d7WE",
+    }
+  ),
 ];
 
 export default projectsData;

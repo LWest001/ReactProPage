@@ -31,9 +31,10 @@ export default function Skills() {
                 xs={6}
                 sm={3}
                 component={Stack}
-                direction="row"
                 gap={1}
                 alignItems="center"
+                key={`skills${tech.name}`}
+                alt={tech.name}
               >
                 <img height="40" src={tech.logo} />
                 <Typography>{techName}</Typography>

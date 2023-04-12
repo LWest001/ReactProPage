@@ -7,7 +7,6 @@ export default function CustomSkill({ icon, name }) {
       xs={6}
       sm={3}
       component={Stack}
-      direction="row"
       gap={1}
       alignItems="center"
     >
