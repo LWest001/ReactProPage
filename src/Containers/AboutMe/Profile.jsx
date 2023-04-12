@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, Typography } from "@mui/material";
 
 export default function Profile() {
   return (
-    <Card variant="grid">
+    <Card variant="grid" sx={{ height: ["inherit", "88.5%"] }}>
       <CardHeader title=<Typography variant="h3">Profile</Typography> />
       <CardContent sx={{ textAlign: "left" }}>
         <Typography>

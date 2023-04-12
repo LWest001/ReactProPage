@@ -11,11 +11,11 @@ export default function AboutMe() {
         <Skills />
       </Grid>
 
-      <Grid item xs={12} sm={5}>
+      <Grid item xs={12} sm={5} >
         <Resume />
       </Grid>
 
-      <Grid item xs={12} sm={7}>
+      <Grid item xs={12} sm={7} >
         <Profile />
       </Grid>
     </Grid>
