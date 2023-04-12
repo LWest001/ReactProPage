@@ -1,6 +1,6 @@
 .TechLogos {
   display: grid;
-  grid-template-columns: repeat(11, auto);
+  grid-template-columns: repeat(12, auto);
   max-width: 100%;
   gap: 1rem;
   padding: 1.25rem 0.25rem 0 0.25rem;

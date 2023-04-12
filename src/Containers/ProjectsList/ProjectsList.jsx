@@ -1,4 +1,4 @@
-import Project from "../../Components/Project/Project";
+import Project from "./Project/Project";
 import projectsData from "./projectsData";
 import { Typography, Grid, Stack } from "@mui/material";
 import { Box } from "@mui/system";

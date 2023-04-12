@@ -1,6 +1,11 @@
 import { createTheme } from "@mui/material/styles";
 
 let theme = createTheme({
+  palette: {
+    background: {
+      default: "#fafafa",
+    },
+  },
   typography: {
     h1: {
       fontSize: "3.2rem",
@@ -12,6 +17,7 @@ let theme = createTheme({
     },
     h3: {
       fontSize: "1.5rem",
+      textAlign: "start",
     },
   },
   components: {
@@ -29,6 +35,16 @@ let theme = createTheme({
       },
     },
     MuiCard: {
+      variants: [
+        {
+          props: { variant: "grid" },
+          style: {
+            height: "87.7%",
+            boxShadow:
+              "0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12)",
+          },
+        },
+      ],
       styleOverrides: {
         root: {
           margin: 20,

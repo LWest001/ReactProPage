@@ -1,15 +1,6 @@
-import HTML from "../../assets/HTML.svg";
-import CSS from "../../assets/CSS.svg";
-import JavaScript from "../../assets/JavaScript.svg";
-import Vite from "../../assets/Vite.svg";
-import Reactjs from "../../assets/React.svg";
-import Jest from "../../assets/Jest.svg";
-import Redux from "../../assets/Redux.svg";
-import Git from "../../assets/Git.svg";
-import GitHub from "../../assets/GitHub.svg";
-import Mocha from "../../assets/Mocha.svg";
-import npm from "../../assets/npm.svg";
 import "./TechLogos.css";
+import { useContext } from "react";
+import { LogosContext } from "../../App";
 
 function TechLogos() {
   const handleOnMouseOver = (e) => {
@@ -22,28 +13,18 @@ function TechLogos() {
     document.querySelector(`p.logo.${className}`).style.visibility = "hidden";
   };
 
-  const technologiesArray = [
-    { HTML },
-    { CSS },
-    { JavaScript },
-    { Reactjs },
-    { Redux },
-    { Vite },
-    { Jest },
-    { Mocha },
-    { Git },
-    { GitHub },
-    { npm },
-  ];
+  const technologiesArray = useContext(LogosContext);
+
+
 
   return (
     <div className="TechLogos">
       {technologiesArray.map((tech) => {
-        const techName = Object.keys(tech)[0];
+        const techName = tech.substring(22, tech.length-4);
         return (
           <div className={`logoContainer ${techName} bounce`} key={techName}>
             <img
-              src={tech[techName]}
+              src={tech}
               onMouseOver={handleOnMouseOver}
               onMouseLeave={handleOnMouseLeave}
               className={`${techName}`}
