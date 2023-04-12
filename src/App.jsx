@@ -6,13 +6,10 @@ import {
   Typography,
   Box,
   useMediaQuery,
-  IconButton,
-  Menu,
 } from "@mui/material";
 import FixedBottomNavigation from "./Components/FixedBottomNavigation";
 import PermanentDrawerNav from "./Components/PermanentDrawerNav";
 import { useState, useEffect, createContext } from "react";
-import { ChevronRight } from "@mui/icons-material";
 import AboutMe from "./Containers/AboutMe/AboutMe";
 import Contact from "./Containers/Contact/Contact";
 import HTML from "./assets/TechLogos/HTML.svg";
@@ -43,37 +40,13 @@ function App() {
     !isMediumScreen && setOpen(true);
   }, [isMediumScreen]);
 
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
   return (
     <Container
       className="App"
       disableGutters
-      sx={{ display: "flex", flexDirection: "column", maxWidth: "1000px" }}
+      maxWidth="1000px"
+      sx={{ display: "flex", flexDirection: "column" }}
     >
-      {isMediumScreen && (
-        <Box position="fixed" sx={{ left: "0", height: "100vh", width: 20 }}>
-          <IconButton
-            color="inherit"
-            size="small"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            // edge="start"
-            sx={{
-              mt: 2,
-              ...(open && { display: "none" }),
-              ":hover": {
-                bgcolor: "black",
-                color: "white",
-              },
-            }}
-          >
-            <ChevronRight />
-          </IconButton>
-        </Box>
-      )}
       <PermanentDrawerNav
         open={open}
         setOpen={setOpen}
@@ -137,7 +110,7 @@ function App() {
         </Typography>
         <Contact />
       </Box>
-      {/* <FixedBottomNavigation /> */}
+      {isMediumScreen && <FixedBottomNavigation />}
     </Container>
   );
 }

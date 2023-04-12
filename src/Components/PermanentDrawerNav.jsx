@@ -1,33 +1,17 @@
 import {
   Drawer,
-  Toolbar,
   Divider,
   List,
   ListItem,
   ListItemButton,
   ListItemIcon,
   ListItemText,
-  IconButton,
   Box,
   CssBaseline,
-  Paper,
 } from "@mui/material";
-import {
-  ChevronLeft,
-  Apps,
-  Person,
-  Email,
-  Home,
-  Menu,
-} from "@mui/icons-material";
+import { Apps, Person, Email, Home } from "@mui/icons-material";
 
-import styled from "@emotion/styled";
-
-function PermanentDrawerNav({ open, setOpen, isMediumScreen }) {
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
-
+function PermanentDrawerNav({ open, isMediumScreen }) {
   const menuItems = [
     { name: "Home", icon: <Home />, section: "#" },
     { name: "About Me", icon: <Person />, section: "#about-me" },
@@ -36,15 +20,6 @@ function PermanentDrawerNav({ open, setOpen, isMediumScreen }) {
   ];
 
   const variant = isMediumScreen ? "persistent" : "permanent";
-
-  const DrawerHeader = styled("div")(({ theme }) => ({
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "flex-end",
-    padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
-    ...theme.mixins.toolbar,
-  }));
 
   return (
     <Box id="menuButton" sx={{ display: "flex", position: "fixed" }}>
@@ -56,13 +31,6 @@ function PermanentDrawerNav({ open, setOpen, isMediumScreen }) {
         open={open}
         transitionDuration={{ enter: 200, appear: 200, exit: 200 }}
       >
-        {isMediumScreen && (
-          <DrawerHeader>
-            <IconButton onClick={handleDrawerClose}>
-              <ChevronLeft />
-            </IconButton>
-          </DrawerHeader>
-        )}
         <Divider sx={{ visibility: isMediumScreen ? "visible" : "hidden" }} />
         <List>
           {menuItems.map((item) => (

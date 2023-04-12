@@ -50,7 +50,6 @@ let theme = createTheme({
         {
           props: { variant: "grid" },
           style: {
-            height: "95%",
             display: "flex",
             flexDirection: "column",
             boxShadow:

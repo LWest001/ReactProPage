@@ -6,7 +6,7 @@ import Profile from "./Profile";
 
 export default function AboutMe() {
   return (
-    <Grid container direction="row" alignItems="stretch">
+    <Grid container alignItems="stretch">
       <Grid item xs={12}>
         <Skills />
       </Grid>

@@ -20,7 +20,7 @@ export default function Skills() {
   const techLogos = useContext(LogosContext);
   return (
     <Card variant="grid">
-      <CardHeader title="Skills" />
+      <CardHeader title=<Typography variant="h3">Skills</Typography> />
       <CardContent sx={{ textAlign: "left" }}>
         <Grid container spacing={1}>
           {techLogos.map((tech) => {
