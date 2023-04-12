@@ -1,12 +1,7 @@
 import "./App.css";
 import Hero from "./Containers/Hero/Hero";
 import ProjectsList from "./Containers/ProjectsList/ProjectsList";
-import {
-  Container,
-  Typography,
-  Box,
-  useMediaQuery,
-} from "@mui/material";
+import { Container, Typography, Box, useMediaQuery } from "@mui/material";
 import FixedBottomNavigation from "./Components/FixedBottomNavigation";
 import PermanentDrawerNav from "./Components/PermanentDrawerNav";
 import { useState, useEffect, createContext } from "react";
@@ -44,8 +39,7 @@ function App() {
     <Container
       className="App"
       disableGutters
-      maxWidth="1000px"
-      sx={{ display: "flex", flexDirection: "column" }}
+      sx={{ display: "flex", flexDirection: "column", maxWidth: "1000px" }}
     >
       <PermanentDrawerNav
         open={open}

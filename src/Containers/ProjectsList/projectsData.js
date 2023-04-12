@@ -17,8 +17,7 @@ import researchIcon from "/src/assets/projectScreenshots/research-icon.svg";
 import researchVideo from "../../assets/projectScreenshots/researchVideo.mp4";
 import researchMobile from "../../assets/projectScreenshots/researchMobile.mp4";
 
-import researchFallback from "../../assets/projectScreenshots/weather-app.png";
-import researchMobileFallback from "../../assets/projectScreenshots/weather-app-mobile.png";
+import researchFallback from "../../assets/projectScreenshots/research.png";
 
 class Project {
   constructor(name, icon, video, fallback, description, links) {
@@ -63,7 +62,7 @@ const projectsData = [
       desktop: researchVideo,
       mobile: researchMobile,
     },
-    { desktop: researchFallback },
+    { desktop: researchFallback, mobile: researchFallback },
     [
       "Experimental cognitive neuroscience research conducted for Senior Honors Thesis, UMass Boston. \
       The experiment was deployed online to participants around the globe.",
