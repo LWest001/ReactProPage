@@ -14,7 +14,8 @@ import weatherMobileFallback from "../../assets/projectScreenshots/weather-app-m
 
 // Research Project
 import researchIcon from "/src/assets/projectScreenshots/research-icon.svg";
-import researchVideo from "../../assets/projectScreenshots/weathernow.mp4";
+import researchVideo from "../../assets/projectScreenshots/researchVideo.mp4";
+import researchMobile from "../../assets/projectScreenshots/researchVideo.mp4";
 
 import researchFallback from "../../assets/projectScreenshots/weather-app.png";
 import researchMobileFallback from "../../assets/projectScreenshots/weather-app-mobile.png";
@@ -60,12 +61,13 @@ const projectsData = [
     researchIcon,
     {
       desktop: researchVideo,
+      mobile: researchMobile,
     },
     { desktop: researchFallback },
     [
       "Experimental cognitive neuroscience research conducted for Senior Honors Thesis, UMass Boston. \
       The experiment was deployed online to participants around the globe.",
-      "We adapted \"Scene wheels: Measuring perception and memory of real-world scenes with a continuous stimulus space\" by Son, Walther & Mack , using the jsPsych library for JavaScript.",
+      'We adapted "Scene wheels: Measuring perception and memory of real-world scenes with a continuous stimulus space" by Son, Walther & Mack , using the jsPsych library for JavaScript.',
       "This was my first foray into programming - some of the code in the repository does not follow best practices. \
       This project also makes use of JavaScript ES5 rather than ES6.",
       "Explore the demo version below, or watch the conference presentation to get a better understanding of our methods and findings.",
