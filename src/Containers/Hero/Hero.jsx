@@ -1,5 +1,5 @@
 import "./Hero.css";
-import TechLogos from "../../Components/TechLogos/TechLogos";
+import TechLogos from "./TechLogos/TechLogos";
 import { Box } from "@mui/material";
 
 function Hero() {

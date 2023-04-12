@@ -1,20 +1,28 @@
 import {
+  Avatar,
   Box,
   Button,
   Card,
   CardContent,
   CardHeader,
   Grid,
-  Link,
   Stack,
   Typography,
 } from "@mui/material";
-import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
+import ResumeIcon from "@mui/icons-material/DescriptionOutlined";
+import DataStructuresIcon from "@mui/icons-material/AccountTreeOutlined";
+import AlgorithmsIcon from "@mui/icons-material/CalculateOutlined";
+import OOPIcon from "@mui/icons-material/DataObjectOutlined";
+import FrontEndIcon from "@mui/icons-material/StorefrontOutlined";
+import BackEndIcon from "@mui/icons-material/CloudOutlined";
 
 import resume from "../../assets/Leo_Westebbe_Resume.pdf";
-import TechLogos from "../../Components/TechLogos/TechLogos";
+import { useContext } from "react";
+import { LogosContext } from "../../App";
+import CustomSkill from "./CustomSkill";
 
 export default function AboutMe() {
+  const techLogos = useContext(LogosContext);
   return (
     <Grid
       container
@@ -32,7 +40,7 @@ export default function AboutMe() {
               href={resume}
               sx={{ p: 0, "&:hover": { color: "black" } }}
             >
-              <DescriptionOutlinedIcon
+              <ResumeIcon
                 sx={{ fontSize: ["150px", "180px", null, "200px"] }}
               />
             </Button>
@@ -43,12 +51,54 @@ export default function AboutMe() {
         <Card variant="grid">
           <CardHeader title="Skills" />
           <CardContent sx={{ textAlign: "left" }}>
-            <Typography>
-              JavaScript · React · Redux · Material UI · Node.js · Netlify · Git
-              · GitHub · Jest · Mocha · vite · Express · Data Structures ·
-              Algorithms · Front-End · Back-End · Microsoft Office · Java ·
-              Python · Object-Oriented Programming
-            </Typography>
+            <Grid container spacing={1}>
+              {techLogos.map((tech) => {
+                const techName = tech.name;
+                return (
+                  <Grid
+                    item
+                    xs={4}
+                    component={Stack}
+                    direction="row"
+                    gap={1}
+                    alignItems="center"
+                  >
+                    <img height="40" src={tech.logo} />
+                    <Typography>{techName}</Typography>
+                  </Grid>
+                );
+              })}
+              <CustomSkill
+                icon=<Avatar
+                  variant="square"
+                  sx={{ height: 40, bgcolor: "black" }}
+                >
+                  Ex
+                </Avatar>
+                name="Express"
+              />
+
+              <CustomSkill
+                icon=<DataStructuresIcon sx={{ fontSize: "40px" }} />
+                name="Data Structures"
+              />
+              <CustomSkill
+                icon=<AlgorithmsIcon sx={{ fontSize: "40px" }} />
+                name="Algorithms"
+              />
+              <CustomSkill
+                icon=<OOPIcon sx={{ fontSize: "40px" }} />
+                name="OOP"
+              />
+              <CustomSkill
+                icon=<FrontEndIcon sx={{ fontSize: "40px" }} />
+                name="Front End"
+              />
+              <CustomSkill
+                icon=<BackEndIcon sx={{ fontSize: "40px" }} />
+                name="Back End"
+              />
+            </Grid>
           </CardContent>
         </Card>
       </Grid>

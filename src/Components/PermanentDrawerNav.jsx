@@ -10,7 +10,7 @@ import {
   IconButton,
   Box,
   CssBaseline,
-  Paper
+  Paper,
 } from "@mui/material";
 import {
   ChevronLeft,
@@ -24,8 +24,6 @@ import {
 import styled from "@emotion/styled";
 
 function PermanentDrawerNav({ open, setOpen, isMediumScreen }) {
-  
-
   const handleDrawerClose = () => {
     setOpen(false);
   };
@@ -49,11 +47,15 @@ function PermanentDrawerNav({ open, setOpen, isMediumScreen }) {
   }));
 
   return (
-    <Box id="menuButton"sx={{ display: "flex", position: "fixed" }}>
+    <Box id="menuButton" sx={{ display: "flex", position: "fixed" }}>
       <CssBaseline />
-      
 
-      <Drawer variant={variant} anchor="left" open={open}>
+      <Drawer
+        variant={variant}
+        anchor="left"
+        open={open}
+        transitionDuration={{ enter: 200, appear: 200, exit: 200 }}
+      >
         {isMediumScreen && (
           <DrawerHeader>
             <IconButton onClick={handleDrawerClose}>

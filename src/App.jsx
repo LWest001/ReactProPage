@@ -18,6 +18,7 @@ import Contact from "./Containers/Contact/Contact";
 import HTML from "./assets/TechLogos/HTML.svg";
 import CSS from "./assets/TechLogos/CSS.svg";
 import JavaScript from "./assets/TechLogos/JavaScript.svg";
+import Node from "./assets/TechLogos/Node.svg";
 import Vite from "./assets/TechLogos/Vite.svg";
 import Reactjs from "./assets/TechLogos/React.svg";
 import MaterialUI from "./assets/TechLogos/MaterialUI.svg";
@@ -27,6 +28,9 @@ import Git from "./assets/TechLogos/Git.svg";
 import GitHub from "./assets/TechLogos/GitHub.svg";
 import Mocha from "./assets/TechLogos/Mocha.svg";
 import npm from "./assets/TechLogos/npm.svg";
+import Java from "./assets/TechLogos/Java.svg";
+import Python from "./assets/TechLogos/Python.svg";
+import Netlify from "./assets/TechLogos/Netlify.svg";
 
 export const LogosContext = createContext();
 
@@ -88,18 +92,23 @@ function App() {
             HTML,
             CSS,
             JavaScript,
-            Vite,
             Reactjs,
+            Git,
+            Node,
+            Vite,
             MaterialUI,
             Jest,
             Redux,
-            Git,
             GitHub,
             Mocha,
             npm,
-          ]}
+            Java,
+            Python,
+            Netlify,
+          ].map((tech) => {
+            return { logo: tech, name: tech.substring(22, tech.length - 4) };
+          })}
         >
-   
           <Box className="Splash" sx={{ height: "100vh" }}>
             <Hero />
             <Box className="nameplate">

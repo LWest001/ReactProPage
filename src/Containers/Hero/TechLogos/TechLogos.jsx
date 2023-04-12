@@ -1,6 +1,6 @@
 import "./TechLogos.css";
 import { useContext } from "react";
-import { LogosContext } from "../../App";
+import { LogosContext } from "../../../App";
 
 function TechLogos() {
   const handleOnMouseOver = (e) => {
@@ -13,26 +13,23 @@ function TechLogos() {
     document.querySelector(`p.logo.${className}`).style.visibility = "hidden";
   };
 
-  const technologiesArray = useContext(LogosContext);
-
-
+  const technologiesArray = useContext(LogosContext).slice(0, 6);
 
   return (
     <div className="TechLogos">
       {technologiesArray.map((tech) => {
-        const techName = tech.substring(22, tech.length-4);
         return (
-          <div className={`logoContainer ${techName} bounce`} key={techName}>
+          <div className={`logoContainer ${tech.name} bounce`} key={tech.name}>
             <img
-              src={tech}
+              src={tech.logo}
               onMouseOver={handleOnMouseOver}
               onMouseLeave={handleOnMouseLeave}
-              className={`${techName}`}
-              key={techName}
-              alt={`${techName} logo`}
+              className={`${tech.name}`}
+              key={tech.name}
+              alt={`${tech.name} logo`}
             />
-            <p className={`logo ${techName}`} style={{ visibility: "hidden" }}>
-              {techName}
+            <p className={`logo ${tech.name}`} style={{ visibility: "hidden" }}>
+              {tech.name}
             </p>
           </div>
         );
