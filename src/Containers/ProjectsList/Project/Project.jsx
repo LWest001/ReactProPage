@@ -1,6 +1,5 @@
 import {
   Stack,
-  Divider,
   Card,
   CardMedia,
   Link,
@@ -103,7 +102,11 @@ function Project({ name, fallback, description, links, icon, video }) {
           </Button>
         )}
         {links.presentation && (
-          <Button component={Link} variant="contained" href={links.presentation}>
+          <Button
+            component={Link}
+            variant="contained"
+            href={links.presentation}
+          >
             Conference presentation
           </Button>
         )}

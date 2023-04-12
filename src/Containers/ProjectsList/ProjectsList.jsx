@@ -1,7 +1,6 @@
 import Project from "./Project/Project";
 import projectsData from "./projectsData";
-import { Typography, Grid, Stack } from "@mui/material";
-import { Box } from "@mui/system";
+import { Stack } from "@mui/material";
 
 function ProjectsList() {
   const projects = projectsData.map((project) => {
