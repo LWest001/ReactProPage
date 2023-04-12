@@ -1,6 +1,7 @@
 import "./TechLogos.css";
 import { useContext } from "react";
 import { LogosContext } from "../../../App";
+import { Box } from "@mui/material";
 
 function TechLogos() {
   const handleOnMouseOver = (e) => {
@@ -20,7 +21,7 @@ function TechLogos() {
     <div className="TechLogos">
       {technologiesArray.map((tech) => {
         return (
-          <div className={`logoContainer ${tech.name} bounce`} key={tech.name}>
+          <Box className={`logoContainer ${tech.name} bounce`} key={tech.name}>
             <img
               src={tech.logo}
               onMouseOver={handleOnMouseOver}
@@ -32,7 +33,7 @@ function TechLogos() {
             <p className={`logo ${tech.name}`} style={{ visibility: "hidden" }}>
               {tech.name}
             </p>
-          </div>
+          </Box>
         );
       })}
     </div>

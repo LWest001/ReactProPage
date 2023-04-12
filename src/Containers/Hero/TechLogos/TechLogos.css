@@ -1,14 +1,11 @@
 .TechLogos {
   display: grid;
   grid-template-columns: repeat(6, auto);
-  max-width: 100%;
-  gap: 1rem;
-  padding: 1.25rem 0.25rem 0 0.25rem;
-  margin: 0 auto;
+  gap: 2rem;
+  padding: 1.25rem 0.25rem;
 }
 
 .logoContainer {
-  flex-direction: column;
   margin: auto;
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
@@ -16,8 +13,6 @@
   animation-fill-mode: both;
 }
 .TechLogos img {
-  width: 100%;
-  max-width: 100%;
   will-change: filter;
   transition: 0.2s;
 }
@@ -33,24 +28,11 @@
 .logoContainer p {
   margin: 0;
   padding: 0;
-  color: black;
   font-weight: bold;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-width: max-content;
   position: absolute;
-  /* top: 0; */
   left: 0;
   right: 0;
-  line-height: 1.1rem;
-  height: 100%;
-  /* z-index: -1; */
-  transition: top 0.2s, bottom 0.2s;
-}
-
-.logoContainer p:hover {
-  top: initial;
 }
 
 @-webkit-keyframes bounce {
@@ -97,8 +79,5 @@
 @media (max-width: 600px) {
   .TechLogos img {
     height: 4rem;
-  }
-  .TechLogos {
-    gap: 1rem;
   }
 }
