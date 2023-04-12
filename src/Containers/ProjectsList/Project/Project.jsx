@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardContent,
   Typography,
+  Button,
 } from "@mui/material";
 import { useState } from "react";
 import MobileViewSwitch from "./MobileViewSwitch";
@@ -74,23 +75,37 @@ function Project({ name, fallback, description, links, icon, video }) {
       </CardContent>
       <Stack
         sx={{
-          height: "2rem",
           width: "100%",
+          height: "4rem",
           display: "flex",
-          justifyContent: "center",
+          justifyContent: "space-evenly",
           alignItems: "center",
           gap: "1rem",
           backgroundColor: "aliceblue",
         }}
         direction="row"
-        divider={<Divider orientation="vertical" flexItem />}
+        // divider={<Divider orientation="vertical" flexItem />}
         className="project-links"
       >
-        {links.hosted && <Link href={links.hosted}>Visit on the web</Link>}
-        {links.demo && <Link href={links.demo}>Demo version</Link>}
-        {links.repo && <Link href={links.repo}>GitHub repository</Link>}
+        {links.hosted && (
+          <Button component={Link} variant="contained" href={links.hosted}>
+            On the web
+          </Button>
+        )}
+        {links.demo && (
+          <Button component={Link} variant="contained" href={links.demo}>
+            Demo version
+          </Button>
+        )}
+        {links.repo && (
+          <Button component={Link} variant="contained" href={links.repo}>
+            GitHub repo
+          </Button>
+        )}
         {links.presentation && (
-          <Link href={links.presentation}>Conference presentation</Link>
+          <Button component={Link} variant="contained" href={links.presentation}>
+            Conference presentation
+          </Button>
         )}
       </Stack>
     </Card>

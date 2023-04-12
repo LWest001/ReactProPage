@@ -67,8 +67,9 @@ const projectsData = [
     [
       "Experimental cognitive neuroscience research conducted for Senior Honors Thesis, UMass Boston. \
       The experiment was deployed online to participants around the globe.",
-      'We adapted "Scene wheels: Measuring perception and memory of real-world scenes with a continuous stimulus space" by Son, Walther & Mack , using the jsPsych library for JavaScript.',
-      "This was my first foray into programming - some of the code in the repository does not follow best practices. \
+      'We adapted "Scene wheels: Measuring perception and memory of real-world scenes with a continuous stimulus space" \
+      by Son, Walther & Mack, using the jsPsych library for JavaScript.',
+      "This was my first foray into programming. Some of the code I wrote for this project does not follow best practices, but working on it gave me a base for understanding HTML, CSS, JavaSCript, andweb development in general. \
       This project also makes use of JavaScript ES5 rather than ES6.",
       "Explore the demo version below, or watch the conference presentation to get a better understanding of our methods and findings.",
     ],
