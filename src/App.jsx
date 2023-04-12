@@ -89,24 +89,24 @@ function App() {
       >
         <LogosContext.Provider
           value={[
-            HTML,
-            CSS,
-            JavaScript,
-            Reactjs,
-            Git,
-            Node,
-            Vite,
-            MaterialUI,
-            Jest,
-            Redux,
-            GitHub,
-            Mocha,
-            npm,
-            Java,
-            Python,
-            Netlify,
+            { HTML },
+            { CSS },
+            { JavaScript },
+            { Reactjs },
+            { Git },
+            { Node },
+            { Vite },
+            { MaterialUI },
+            { Jest },
+            { Redux },
+            { GitHub },
+            { Mocha },
+            { npm },
+            { Java },
+            { Python },
+            { Netlify },
           ].map((tech) => {
-            return { logo: tech, name: tech.substring(22, tech.length - 4) };
+            return { logo: Object.values(tech), name: Object.keys(tech) };
           })}
         >
           <Box className="Splash" sx={{ height: "100vh" }}>
