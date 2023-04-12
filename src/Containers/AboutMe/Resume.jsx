@@ -12,14 +12,23 @@ export default function Resume() {
   return (
     <Card variant="grid">
       <CardHeader title=<Typography variant="h3">Resume</Typography> />
-      <CardContent sx={{ p: "12px !important" }}>
+      <CardContent
+        sx={{
+          display: "flex",
+        }}
+      >
         <Button
           component="a"
           variant="outlined"
           href={resume}
-          sx={{ p: 0, "&:hover": { color: "black" } }}
+          sx={{
+            p: [1, 0],
+            flexDirection: ["row", "column"],
+            "&:hover": { color: "#13589d" },
+          }}
         >
-          <ResumeIcon sx={{ fontSize: ["150px", "180px", null, "200px"] }} />
+          <ResumeIcon sx={{ fontSize: ["50px", "180px", null, "200px"] }} />
+          <Typography fontSize={24}>View resume</Typography>
         </Button>
       </CardContent>
     </Card>

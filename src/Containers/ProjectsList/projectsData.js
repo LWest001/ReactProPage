@@ -12,6 +12,17 @@ import weatherMobileVideo from "../../assets/projectScreenshots/weathernowMobile
 import weatherFallback from "../../assets/projectScreenshots/weather-app.png";
 import weatherMobileFallback from "../../assets/projectScreenshots/weather-app-mobile.png";
 
+class Project {
+  constructor(name, icon, video, fallback, description, links) {
+    this.name = name;
+    this.icon = icon;
+    this.video = video;
+    this.fallback = fallback;
+    this.description = description;
+    this.links = links;
+  }
+}
+
 const projectsData = [
   {
     name: "rLite Reddit Client",
