@@ -9,7 +9,7 @@ export default function ContactMeForm({ sendEmail }) {
     control,
     formState: { isSubmitting, isSubmitSuccessful, errors },
   } = useForm({
-    mode: "all",
+    mode: "onSubmit",
   });
 
   return (
