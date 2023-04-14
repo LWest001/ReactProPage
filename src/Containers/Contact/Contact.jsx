@@ -3,6 +3,7 @@ import {
   Button,
   Card,
   CardContent,
+  FormLabel,
   Stack,
   Typography,
 } from "@mui/material";
@@ -10,6 +11,7 @@ import { useForm } from "react-hook-form";
 import { AlternateEmail, GitHub, LinkedIn } from "@mui/icons-material";
 import FormItemHook from "./FormItemHook";
 import emailjs from "@emailjs/browser";
+import ContactMeForm from "./ContactMeForm";
 
 export default function Contact() {
   const {
@@ -46,7 +48,12 @@ export default function Contact() {
             direction={["column", "column", "row"]}
             justifyContent="space-between"
             alignItems={["start", "start", "center"]}
+            flexWrap="wrap"
+            aria-labelledby="contact-links"
           >
+            <Typography variant="h3" width={"100%"} id="contact-links">
+              Find me on the web
+            </Typography>
             <Button
               display="flex"
               component="a"
@@ -75,67 +82,11 @@ export default function Contact() {
               <LinkedIn /> LinkedIn: Leo-Westebbe
             </Button>
           </Stack>
-          <Box
-            component="form"
-            onSubmit={handleSubmit(sendEmail)}
-            display="grid"
-            gridTemplateColumns="1fr 1fr"
-            flexDirection="column"
-            gap={2}
-          >
-            {!isSubmitting && !isSubmitSuccessful && (
-              <>
-                <FormItemHook
-                  control={control}
-                  name={"firstName"}
-                  prettyName="First Name"
-                />
-                <FormItemHook
-                  control={control}
-                  name={"lastName"}
-                  prettyName="Last Name"
-                />
-                <FormItemHook
-                  control={control}
-                  name={"email"}
-                  type="email"
-                  prettyName="Your Email Address"
-                />
-                <FormItemHook
-                  control={control}
-                  name={"subject"}
-                  prettyName="Subject"
-                />
-                <FormItemHook
-                  control={control}
-                  name={"message"}
-                  prettyName="Message"
-                  textFieldProps={{
-                    rows: 4,
-                    multiline: true,
-                  }}
-                  sx={{ gridColumn: "1/3" }}
-                />
-                <Button
-                  type="submit"
-                  variant="contained"
-                  sx={{
-                    gridColumn: "1/3",
-                  }}
-                  disabled={isSubmitting}
-                >
-                  Send message
-                </Button>
-              </>
-            )}
-            {isSubmitSuccessful && (
-              <Typography sx={{ gridColumn: "1/3" }}>
-                Thank you for getting in touch! I will respond as soon as I can.
-              </Typography>
-            )}
-          </Box>
+          <ContactMeForm sendEmail={sendEmail} />
         </Stack>
       </CardContent>
     </Card>
   );
 }
+
+export const { sendEmail } = Contact;
