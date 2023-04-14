@@ -8,6 +8,7 @@ export default function FormItemHook({
   type,
   sx,
   textFieldProps,
+  id,
 }) {
   const {
     field,
@@ -30,6 +31,7 @@ export default function FormItemHook({
       required
       {...textFieldProps}
       sx={{ ...sx }}
+      id={id}
     />
   );
 }

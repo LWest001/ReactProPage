@@ -11,7 +11,7 @@ import {
 export default function Resume() {
   return (
     <Card variant="grid" sx={{ height: ["inherit", "88.5%"] }}>
-      <CardHeader title=<Typography variant="h3">Resume</Typography> />
+      <CardHeader title={<Typography variant="h3">Resume</Typography>} />
       <CardContent
         sx={{
           display: "flex",
