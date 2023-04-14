@@ -1,9 +1,7 @@
 import {
-  Box,
   Button,
   Card,
   CardContent,
-  FormLabel,
   Stack,
   Typography,
 } from "@mui/material";
@@ -14,13 +12,6 @@ import emailjs from "@emailjs/browser";
 import ContactMeForm from "./ContactMeForm";
 
 export default function Contact() {
-  const {
-    handleSubmit,
-    control,
-    formState: { isSubmitting, isSubmitSuccessful, errors },
-  } = useForm({
-    mode: "all",
-  });
 
   const sendEmail = (data) => {
     emailjs
@@ -88,5 +79,3 @@ export default function Contact() {
     </Card>
   );
 }
-
-export const { sendEmail } = Contact;
