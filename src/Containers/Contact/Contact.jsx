@@ -1,18 +1,9 @@
-import {
-  Button,
-  Card,
-  CardContent,
-  Stack,
-  Typography,
-} from "@mui/material";
-import { useForm } from "react-hook-form";
+import { Button, Card, CardContent, Stack, Typography } from "@mui/material";
 import { AlternateEmail, GitHub, LinkedIn } from "@mui/icons-material";
-import FormItemHook from "./FormItemHook";
 import emailjs from "@emailjs/browser";
 import ContactMeForm from "./ContactMeForm";
 
 export default function Contact() {
-
   const sendEmail = (data) => {
     emailjs
       .send("service_rumsnfj", "template_kk9crxp", data, "twU11xl6ItuNlbP3k")

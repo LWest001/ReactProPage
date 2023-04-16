@@ -53,7 +53,7 @@ describe("Submitting the form", () => {
     setTimeout(
       () =>
         expect(screen.getByText("Thank you for getting in touch!")).toBeDefined,
-      500
+      1000
     );
   });
 
@@ -66,12 +66,12 @@ describe("Submitting the form", () => {
     );
     const button = screen.getByRole("button", { name: /Send message/i });
 
-    // await user.type(firstName, "John");
-    // await user.type(lastName, "Doe");
-    // await user.type(email, "JohnDoeaol.com");
-    // await user.type(subject, "Wazzup");
-    // await user.type(message, "Test");
+    await user.type(firstName, "John");
+    await user.type(lastName, "Doe");
+    await user.type(email, "JohnDoe@aol.com");
+    await user.type(subject, "Wazzup");
+    await user.type(message, "Test");
     await user.click(button);
-    console.log(screen.getAllByRole("alert"));
+    setTimeout(() => expect(mockSendEmail).toBeCalled(), 1000);
   });
 });

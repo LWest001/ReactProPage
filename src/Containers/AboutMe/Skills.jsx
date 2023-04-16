@@ -42,9 +42,11 @@ export default function Skills() {
             );
           })}
           <CustomSkill
-            icon=<Avatar variant="square" sx={{ height: 40, bgcolor: "black" }}>
-              Ex
-            </Avatar>
+            icon={
+              <Avatar variant="square" sx={{ height: 40, bgcolor: "black" }}>
+                Ex
+              </Avatar>
+            }
             name="Express"
           />
 

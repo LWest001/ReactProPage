@@ -1,7 +1,6 @@
 import { describe, expect, it } from "vitest";
 import Contact from "../src/Containers/Contact/Contact";
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 
 describe("Contact section", () => {
   it("Should render the links", () => {
