@@ -52,7 +52,7 @@ describe("Submitting the form", () => {
     expect(mockSendEmail).toBeCalled();
     setTimeout(
       () =>
-        expect(screen.getByText("Thank you for getting in touch!")).toBeDefined,
+        expect(screen.getByText("Thank you for getting in touch")).toBeDefined,
       1000
     );
   });

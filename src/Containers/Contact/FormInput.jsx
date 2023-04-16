@@ -7,6 +7,7 @@ export default function FormInput({
   control,
   rules,
   type,
+  autoComplete,
   textFieldProps,
 }) {
   return (
@@ -24,6 +25,7 @@ export default function FormInput({
           type="email"
           {...textFieldProps}
           id={`field-${name}`}
+          autoComplete={autoComplete}
         />
       )}
     />
