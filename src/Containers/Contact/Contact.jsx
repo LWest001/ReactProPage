@@ -4,23 +4,23 @@ import emailjs from "@emailjs/browser";
 import ContactMeForm from "./ContactMeForm";
 
 export default function Contact() {
-  const sendEmail = (data) => {
-    emailjs
-      .send("service_rumsnfj", "template_kk9crxp", data, "twU11xl6ItuNlbP3k")
-      .then(
-        (result) => {
-          return result.text;
-        },
-        (error) => {
-          return error.text;
-        }
-      );
-  };
+  // const sendEmail = (data) => {
+  //   emailjs
+  //     .send("service_rumsnfj", "template_kk9crxp", data, "twU11xl6ItuNlbP3k")
+  //     .then(
+  //       (result) => {
+  //         return result.text;
+  //       },
+  //       (error) => {
+  //         return error.text;
+  //       }
+  //     );
+  // };
 
   // Testing function
-  // const sendEmail = (data) => {
-  //   console.log(data);
-  // };
+  const sendEmail = (data) => {
+    console.log(data);
+  };
 
   return (
     <Card raised>

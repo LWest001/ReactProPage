@@ -32,9 +32,29 @@ export default function ContactMeForm({ sendEmail }) {
       >
         <FormInput name="firstName" label="First Name" control={control} />
         <FormInput name="lastName" label="Last Name" control={control} />
-        <FormInput name="email" label="Your Email Address" control={control} />
+        <FormInput
+          name="email"
+          label="Your Email Address"
+          control={control}
+          type="email"
+          rules={{
+            pattern: {
+              value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+              message: "Please enter a valid email address.",
+            },
+          }}
+        />
         <FormInput name="subject" label="Subject" control={control} />
-        <FormInput name="message" label="Message" control={control} />
+        <FormInput
+          name="message"
+          label="Message"
+          control={control}
+          textFieldProps={{
+            rows: 4,
+            multiline: true,
+            sx: { gridColumn: "1/3" },
+          }}
+        />
         <Button
           type="submit"
           variant="contained"

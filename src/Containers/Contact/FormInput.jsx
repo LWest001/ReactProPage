@@ -1,12 +1,19 @@
 import { TextField } from "@mui/material";
 import { Controller } from "react-hook-form";
 
-export default function FormInput({ name, label, control, textFieldProps }) {
+export default function FormInput({
+  name,
+  label,
+  control,
+  rules,
+  type,
+  textFieldProps,
+}) {
   return (
     <Controller
       name={name}
       control={control}
-      rules={{ required: "This field is required" }}
+      rules={{ ...rules, required: "This field is required" }}
       render={({ field: { onChange, value }, fieldState: { error } }) => (
         <TextField
           onChange={onChange}
@@ -14,7 +21,9 @@ export default function FormInput({ name, label, control, textFieldProps }) {
           error={!!error}
           value={value}
           label={label}
+          type="email"
           {...textFieldProps}
+          id={`field-${name}`}
         />
       )}
     />
