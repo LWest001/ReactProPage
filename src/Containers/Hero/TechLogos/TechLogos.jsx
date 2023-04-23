@@ -6,12 +6,12 @@ import { Box } from "@mui/material";
 function TechLogos() {
   const handleOnMouseOver = (e) => {
     const className = e.target.className;
-    document.querySelector(`p.logo.${className}`).style.visibility = "visible";
+    document.querySelector(`p.techName.${className}`).style.visibility = "visible";
   };
 
   const handleOnMouseLeave = (e) => {
     const className = e.target.className;
-    document.querySelector(`p.logo.${className}`).style.visibility = "hidden";
+    document.querySelector(`p.techName.${className}`).style.visibility = "hidden";
   };
 
   let technologiesArray = useContext(LogosContext);
@@ -30,7 +30,7 @@ function TechLogos() {
               key={`hero-${tech.name}`}
               alt={`${tech.name} logo`}
             />
-            <p className={`logo ${tech.name}`} style={{ visibility: "hidden" }}>
+            <p className={`techName ${tech.name}`} style={{ visibility: "hidden" }}>
               {tech.name}
             </p>
           </Box>

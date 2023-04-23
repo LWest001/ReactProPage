@@ -25,7 +25,7 @@
   filter: drop-shadow(0 2.3rem 0.5rem white) drop-shadow(0 0 0.5rem white);
 }
 
-.logoContainer p {
+.techName {
   margin: 0;
   padding: 0;
   font-weight: bold;
@@ -79,5 +79,18 @@
 @media (max-width: 600px) {
   .TechLogos img {
     height: 4rem;
+  }
+  .TechLogos {
+    grid-template-columns: repeat(6, auto);
+    gap: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .TechLogos img {
+    height: 3rem;
+  }
+  .techName {
+    font-size: small;
   }
 }
