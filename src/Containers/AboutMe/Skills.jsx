@@ -51,20 +51,23 @@ export default function Skills() {
           />
 
           <CustomSkill
-            icon=<DataStructuresIcon sx={{ fontSize: "40px" }} />
+            icon={<DataStructuresIcon sx={{ fontSize: "40px" }} />}
             name="Data Structures"
           />
           <CustomSkill
-            icon=<AlgorithmsIcon sx={{ fontSize: "40px" }} />
+            icon={<AlgorithmsIcon sx={{ fontSize: "40px" }} />}
             name="Algorithms"
           />
-          <CustomSkill icon=<OOPIcon sx={{ fontSize: "40px" }} /> name="OOP" />
           <CustomSkill
-            icon=<FrontEndIcon sx={{ fontSize: "40px" }} />
+            icon={<OOPIcon sx={{ fontSize: "40px" }} />}
+            name="OOP"
+          />
+          <CustomSkill
+            icon={<FrontEndIcon sx={{ fontSize: "40px" }} />}
             name="Front End"
           />
           <CustomSkill
-            icon=<BackEndIcon sx={{ fontSize: "40px" }} />
+            icon={<BackEndIcon sx={{ fontSize: "40px" }} />}
             name="Back End"
           />
         </Grid>

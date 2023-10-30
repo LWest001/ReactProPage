@@ -1,6 +1,6 @@
 import ResumeIcon from "@mui/icons-material/DescriptionOutlined";
 
-import resume from "../../assets/Leo_Westebbe_Resume.pdf";
+import resume from "../../assets/Westebbe_Resume_2023.pdf";
 import {
   Button,
   Card,

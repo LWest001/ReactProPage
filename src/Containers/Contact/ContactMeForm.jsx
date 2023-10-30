@@ -4,6 +4,7 @@ import FormInput from "./FormInput";
 import facePic from "../../assets/avatar-headshot.png";
 
 export default function ContactMeForm({ sendEmail }) {
+  
   const {
     handleSubmit,
     reset,
